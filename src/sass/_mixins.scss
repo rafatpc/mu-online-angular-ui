@@ -1,0 +1,27 @@
+@mixin bar($background, $border-bottom, $height) {
+    background-color: $background;
+    border-bottom: $border-bottom;
+    line-height: $height;
+    height: $height;
+
+    @if $full-width-bars == false {
+        width: $max-width;
+        padding: 0 10px;
+        margin: 0 auto;
+    }
+}
+
+@mixin gradient($direction, $list) {
+    background: -webkit-linear-gradient($direction, $list);
+    background: -moz-linear-gradient($direction, $list);
+    background: -o-linear-gradient($direction, $list);
+    background: linear-gradient($direction, $list);
+}
+
+// In some cases web browser's styles should be overriden on place
+@mixin font() {
+    font-family: 'Open Sans', sans-serif;
+    font-variant: small-caps;
+    font-size: 11px;
+    letter-spacing: .5px;
+}

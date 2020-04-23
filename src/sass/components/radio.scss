@@ -1,0 +1,43 @@
+div.radio {
+    display: flex;
+
+    .box {
+        width: $checkbox-width;
+        height: $checkbox-width;
+        background-color: $checbox-background;
+        border: 1px solid $checbox-border;
+        margin-right: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border-radius: 100%;
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: $checkbox-cursor;
+        }
+
+        input:checked + .circle {
+            display: block;
+        }
+
+        .circle {
+            background-color: $checkbox-color;
+            width: $checkbox-width - 6px;
+            height: $checkbox-width - 6px;
+            pointer-events: none;
+            border-radius: 100%;
+            display: none;
+        }
+    }
+
+    label {
+        line-height: $checkbox-width;
+        cursor: $checkbox-cursor;
+    }
+}

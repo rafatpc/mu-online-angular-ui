@@ -1,0 +1,78 @@
+header {
+    width: $max-width;
+    height: $header-height;
+    @include gradient(180deg, $header-gradient);
+    margin: 0 auto;
+    display: flex;
+
+    .logo,
+    .login {
+        flex: 1 0 50%;
+    }
+
+    .login {
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        height: $header-height;
+        display: flex;
+        align-items: center;
+
+        form {
+            display: block;
+            width: $login-width;
+            margin: 0 10px 0 auto;
+
+            h2 {
+                text-align: right;
+                color: $login-title-color;
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 9px;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                display: block;
+                margin-top: $login-spacing;
+                width: 100%;
+            }
+
+            .links {
+                margin-top: $login-spacing;
+                display: flex;
+                width: 100%;
+
+                li {
+                    flex: 1 0 auto;
+                    text-align: center;
+                }
+            }
+
+            .controls {
+                margin-top: ($login-spacing * 2);
+                display: flex;
+
+                .remember-me,
+                .sign-in {
+                    flex: 1 0 auto;
+                }
+
+                .remember-me {
+                    color: $login-remember-color;
+                    display: flex;
+                    align-items: center;
+                }
+
+                .sign-in {
+                    text-align: right;
+
+                    button {
+                        text-transform: lowercase;
+                        font-weight: bold;
+                        padding: 3px 10px;
+                    }
+                }
+            }
+        }
+    }
+}

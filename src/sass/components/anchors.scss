@@ -1,0 +1,22 @@
+a {
+    color: $anchor;
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+
+    &.dark {
+        color: $anchor-dark;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: $anchor-hover;
+        border-color: $anchor-hover;
+        text-decoration: none;
+
+        &.dark {
+            color: $anchor-dark-hover;
+            border-bottom-color: $anchor-dark-hover;
+        }
+    }
+}

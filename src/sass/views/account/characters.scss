@@ -1,0 +1,16 @@
+section.characters {
+    h1 {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .character {
+        flex: 0 0 20%;
+    }
+}

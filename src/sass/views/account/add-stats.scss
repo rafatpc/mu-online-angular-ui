@@ -1,0 +1,37 @@
+section.add-stats,
+section.dual-stats {
+    .requirements,
+    .action {
+        flex: 1;
+    }
+
+    .action {
+        .wrapper {
+            width: 180px;
+        }
+
+        .stat {
+            display: flex;
+            margin-bottom: 5px;
+
+            label,
+            input,
+            span {
+                line-height: 24px;
+                flex: 1;
+            }
+
+            label {
+                text-align: right;
+            }
+
+            span {
+                margin-right: 5px;
+            }
+
+            input {
+                width: 60px;
+            }
+        }
+    }
+}

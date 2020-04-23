@@ -1,0 +1,218 @@
+// Main colors
+$gray-darkest: #040404;
+$gray-dark: #202020;
+$gray-light: #2d2d2d;
+$gray: #444444;
+$gray-lightest: #f4efea;
+$white: #ffffff;
+$black: #000000;
+$blue: #1896c6;
+$green: #95ad21;
+$yellow: #fed724;
+$error: #ff0000;
+$success: #dddd00;
+$navy: #5f634a;
+
+// Functionality-related colors
+$disabled: $gray;
+
+// Main
+$max-width: 1024px;
+$full-width-bars: false;
+$background-image: '/assets/images/background.png';
+$background-color: $gray-darkest;
+
+// Highlight
+$highlight-color: $yellow;
+$highlight-color-red: #95251d;
+$highlight-color-green: $success;
+
+// Anchors
+$anchor: #cccccc;
+$anchor-hover: $white;
+$anchor-dark: $navy;
+$anchor-dark-hover: $white;
+
+// Inputs
+$input-background: #272727;
+$input-border-color: #1e1e1e;
+$input-color: #6f7261;
+$input-height: 24px;
+
+// Checkbox
+$checbox-background: $gray-dark;
+$checbox-border: $gray;
+$checkbox-color: $green;
+$checkbox-width: 14px;
+$checkbox-cursor: pointer;
+
+// Top Bar
+$top-bar-title-height: 19px;
+$top-bar-title-background: $gray-light;
+$top-bar-title-border: 1px solid $black;
+$top-bar-info-height: 42px;
+$top-bar-info-background: $gray-dark;
+$top-bar-info-border: 1px solid $black;
+
+// Status
+$status-online: #ccff00;
+$status-offline: $error;
+
+// Header
+$header-height: 136px;
+$header-gradient: transparentize($gray-light, 0.6), transparentize($gray-light, 0.4), transparentize($gray-dark, 0);
+
+// Login
+$login-width: 200px;
+$login-title-color: $blue;
+$login-spacing: 5px;
+$login-remember-color: $anchor-dark;
+
+// Navigation
+$nav-height: 56px;
+$nav-background: '/assets/images/menu_background.png';
+$nav-anchor-color: $black;
+$nav-anchor-gradient: #ffe462, #ffd927;
+$nav-anchor-hover-gradient: #ffa74a, #ff7801;
+$nav-anchor-width: 77px;
+$nav-anchor-height: 27px;
+$nav-anchor-spacing: 2px;
+$nav-anchor-radius: 6px;
+$nav-background-fade: $gray-dark, $gray-dark, rgba(0, 0, 0, 0);
+
+// Submenu
+$submenu-anchor-height: 19px;
+$submenu-color: $yellow;
+$submenu-border: $gray-light;
+$submenu-background: lighten($gray-darkest, 10%);
+$submenu-hover-background: darken($gray-light, 3%);
+$submenu-hover-color: $white;
+$submenu-hover-border: $gray;
+$submenu-radius: 5px;
+
+// Main Container
+$main-background: $gray-dark;
+$main-border-top: $blue;
+$main-border-bottom: $green;
+$main-overlay: transparentize($black, 0.5);
+
+// Footer
+$quick-links-background: $gray-light;
+$quick-links-border: 1px solid $black;
+$quick-links-height: 41px;
+$credits-background: $gray-dark;
+$credits-border: 1px solid $black;
+$credits-height: 19px;
+$credits-color: $yellow;
+
+// News
+$news-background-color: lighten($gray-darkest, 5%);
+$news-spacing: 10px;
+$news-border: $black;
+$news-title-height: 57px;
+$news-title-spacing: 0 10px;
+$news-title-background: '/assets/images/news_header.png';
+$news-icon-width: 21px;
+$news-icon-height: 23px;
+$news-icon-margin: 3px 8px 0 0;
+$news-icon-background: '/assets/images/news_icon.png';
+$news-title-main-color: $green;
+$news-title-main-size: 16px;
+$news-title-secondary-color: $blue;
+$news-title-secondary-size: 10px;
+$news-footer-height: 20px;
+$news-footer-background: '/assets/images/news_footer.png';
+
+// Content Box
+$content-box-title-gradient: $gray-light, lighten($gray-darkest, 3%);
+$content-box-title-color: $green;
+$content-box-title-height: 20px;
+$content-box-content-spacing: 5px;
+$content-box-background: lighten($gray-darkest, 5%);
+$content-box-border: $black;
+$content-box-spacing: 0 5px;
+
+// Tabs
+$tabs-pill-background: #64675e;
+$tabs-pill-hover-background: #525648;
+$tabs-pill-round-radius: 8px;
+$tabs-pill-height: 40px;
+$tabs-pill-color: $yellow;
+$tabs-pills-border: $black;
+$tabs-content-background: #525648;
+$tabs-content-border: $black;
+$tabs-content-spacing: 10px;
+
+// Buttons
+$button-gradient: #ffe462, #ffd927;
+$button-hover-gradient: #ffa74a, #ff7801;
+$button-color: $black;
+$button-color-hover: $black;
+$button-border: $black;
+$button-gray-gradient: $gray-light, $gray-dark;
+$button-gray-hover-gradient: $gray-dark, lighten($gray-darkest, 5%);
+$button-gray-color: $yellow;
+$button-gray-hover-color: darken($yellow, 20%);
+$button-gray-border: $black;
+
+// Home - Info tab
+$home-info-background: darken($gray-dark, 5%);
+$home-info-border: lighten($gray-light, 2%);
+$home-info-spacing: 5px;
+$home-info-radius: 6px;
+$home-info-color: $navy;
+$home-info-block-spacing: 2px;
+$home-info-name-color: $yellow;
+$home-info-free-color: $error;
+
+// Tables
+$table-row-odd-color: #111111;
+$table-row-even-color: $gray-darkest;
+$table-row-hover-color: #181818;
+$table-border-color: $black;
+$table-header-color: $yellow;
+$table-cell-height: 26px;
+$table-transparent-hover: lighten($gray-dark, 2%);
+$table-transparent-border: $gray-light;
+
+// PK Levels
+$pk-level-hero-2: #3d9bd3;
+$pk-level-hero-1: #1b5073;
+$pk-level-commoner: $white;
+$pk-level-phonoman-1: #d43d32;
+$pk-level-phonoman-2: #95251d;
+$pk-level-murderer: #56110d;
+
+// Downloads
+$downloads-border: $gray;
+$downloads-icon-color: $yellow;
+$downloads-icon-color-hover: $white;
+
+// Character
+$character-border: $gray-light;
+$character-image-scale: 1.1;
+
+// Character & Guild details common
+$details-borders: $gray-light;
+$details-second-cell-color: $highlight-color;
+
+// Character Details
+$character-details-item-background: lighten($gray-darkest, 5%);
+$character-details-item-background-hover: lighten($gray-darkest, 10%);
+$character-details-item-dimension: 64px;
+$character-details-item-spacing: 5px;
+$character-details-item-per-row: 7;
+
+// Vault
+$vault-slot-free: '/assets/images/slot_free.jpg';
+$vault-slot-taken: '/assets/images/slot_taken.jpg';
+
+// Items
+$item-normal: #FFFFFF;
+$item-expensive: #e3c469;
+$item-excellent: #19ff7f;
+$item-socket: #ff19ff;
+$item-ancient-background: #3d3bc8;
+$item-ancient: #20ed3c;
+$item-harmony: #ffcc19;
+$item-guardian: #b093b1;

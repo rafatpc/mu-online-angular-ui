@@ -1,32 +1,104 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  template: `
-    <!--The content below is only a placeholder and can be replaced.-->
-    <div style="text-align:center" class="content">
-      <h1>
-        Welcome to {{title}}!
-      </h1>
-      <span style="display: block">{{ title }} app is running!</span>
-      <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-    </div>
-    <h2>Here are some links to help you start: </h2>
-    <ul>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-      </li>
-      <li>
-        <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-      </li>
-    </ul>
-    <router-outlet></router-outlet>
-  `,
-  styles: []
+    selector: 'app-root',
+    template: `
+    <section class="top-bar">
+        <div class="title">
+            <div class="content">
+                <div class="message">
+                    <i class="fas fa-angle-double-right"></i>
+                    WELCOME TO <span class="server-name">DarkPowerMu</span>, ENJOY YOUR STAY ~ SERVER TIME IS: <span class="time">14:48</span>
+                </div>
+                <div class="links">
+                    <i class="fas fa-angle-double-right"></i>
+                    <a href="#">home</a>
+                    <i class="fas fa-angle-double-right"></i>
+                    <a href="#">forum</a>
+                    <i class="fas fa-angle-double-right"></i>
+                    <a href="#">downloads</a>
+                    <i class="fas fa-angle-double-right"></i>
+                    <a href="#">vote</a>
+                </div>
+            </div>
+        </div>
+        <div class="information">
+            <div class="content">
+                DarkPowerMu: <strong class="status online">Online</strong> ~
+                DarkPowerMu VIP: <strong class="status online">Online</strong> ~
+                Castle Siege: <strong class="status offline">Offline</strong>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="logo">
+            <img src="/assets/images/logo.png" alt="Mu Online Logo" />
+        </div>
+        <div class="login">
+            <form action="" method="post">
+                <h2><i class="fas fa-angle-double-right"></i> Members Login</h2>
+                <input type="text" name="username" placeholder="username" />
+                <input type="password" name="password" placeholder="password" />
+                <ul class="links no-bullet">
+                    <li>
+                        <a href="#" class="dark">New account</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dark">Lost password?</a>
+                    </li>
+                </ul>
+                <div class="controls">
+                    <div class="remember-me">
+                        <div class="checkbox">
+                        <div class="box">
+                            <input type="checkbox" id="remember-me" name="remember" />
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <label for="remember-me">Keep me signed-in</label>
+                    </div>
+
+                    </div>
+                    <div class="sign-in">
+                        <button type="submit" class="button gray">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </header>
+    <nav>
+        <div class="background-fade"></div>
+        <div id="main-menu" class="main">
+            <a href="#/test">Home</a>
+            <a href="#/test">Register</a>
+            <div class="filler"></div>
+        </div>
+        <div id="sub-menu" class="submenu">
+            <a href="#/test">sub</a>
+            <i class="fas fa-angle-double-right"></i>
+            <a href="#/test">menu</a>
+            <i class="fas fa-angle-double-right"></i>
+            <a href="#/test">items</a>
+        </div>
+    </nav>
+    <main>
+        <router-outlet></router-outlet>
+    </main>
+    <footer>
+        <div class="quick-links">
+            <a href="#home">home</a> -
+            <a href="#statistics">statistics</a> -
+            <a href="#downloads">downloads</a> -
+            <a href="#vote">vote for us</a> -
+            <a href="#webshop">webshop</a> -
+            <a href="#site-map">site map</a>
+        </div>
+        <div class="credits">
+            (c) XWeb 2009 [clone] | Front-end by RaFa | Design by Anthony
+        </div>
+    </footer>
+    `,
+    styles: []
 })
 export class AppComponent {
-  title = 'SimpleAsThat';
+    title = 'SimpleAsThat';
 }

@@ -1,0 +1,41 @@
+div.checkbox {
+    display: flex;
+
+    .box {
+        width: $checkbox-width;
+        height: $checkbox-width;
+        background-color: $checbox-background;
+        border: 1px solid $checbox-border;
+        margin-right: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            cursor: $checkbox-cursor;
+        }
+
+        input:checked + .fa-check {
+            display: block;
+        }
+
+        .fa-check {
+            color: $checkbox-color;
+            pointer-events: none;
+            margin-right: -1px; // Visual fix
+            font-size: 10px;
+            display: none;
+        }
+    }
+
+    label {
+        line-height: $checkbox-width;
+        cursor: $checkbox-cursor;
+    }
+}

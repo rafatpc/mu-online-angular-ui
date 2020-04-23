@@ -1,0 +1,56 @@
+section.downloads {
+    margin-bottom: 20px;
+    display: flex;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .mirror {
+        border: 1px solid $downloads-border;
+        flex: 0 1 50%;
+        font-size: 10px;
+        padding: 10px;
+        margin: 10px;
+
+        h1 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        p {
+            margin-bottom: 2px;
+        }
+
+        .icon {
+            color: $downloads-icon-color;
+            font-size: 28px;
+            padding-bottom: 2px;
+
+            &:hover,
+            &:focus,
+            &:active {
+                color: $downloads-icon-color-hover;
+            }
+        }
+
+        .content {
+            display: flex;
+        }
+
+        .info {
+            flex: auto;
+        }
+
+        .download {
+            display: flex;
+            flex: 0 1 50px;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                display: inline-block;
+            }
+        }
+    }
+}

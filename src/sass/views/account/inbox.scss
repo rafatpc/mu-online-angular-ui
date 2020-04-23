@@ -1,0 +1,159 @@
+$inbox-background: #222;
+$inbox-border: $black;
+$inbox-message-odd: #333;
+$inbox-input-color: #ccc;
+$inbox-message-host: #444;
+$inbox-message-guest: #111;
+
+section.inbox {
+    background-color: $inbox-background;
+    border: 1px solid $inbox-border;
+    display: flex;
+    width: 100%;
+    min-height: 200px;
+    max-height: 400px;
+
+    .messages {
+        border-right: 1px solid $inbox-border;
+        flex: 0 0 300px;
+        max-height: 400px;
+        overflow-y: scroll;
+
+        .message {
+            border-bottom: 1px solid transparent;
+            display: block;
+            padding: 10px;
+
+            h2 {
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+            .from {
+                font-size: 10px;
+            }
+
+            &:nth-child(even) {
+                background-color: $inbox-message-odd;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                border-bottom: 1px dashed $anchor-hover;
+            }
+        }
+    }
+
+    .coversation {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        .content {
+            flex: 1;
+            overflow-y: scroll;
+            padding: 20px;
+
+            .message {
+                position: relative;
+                margin-bottom: 15px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: table;
+                    clear: both;
+                }
+
+                .arrow {
+                    background-color: $inbox-message-host;
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    position: absolute;
+                    top: 7px;
+                    left: -5px;
+                    z-index: 0;
+                    transform: rotate(45deg);
+                }
+
+                .text {
+                    background-color: $inbox-message-host;
+                    position: relative;
+                    z-index: 1;
+                    padding: 10px;
+                    border-radius: 10px;
+                    min-height: 30px;
+                    max-width: 50%;
+                    float: left;
+                    display: flex;
+                    align-items: center;
+                }
+
+                &.mine {
+                    .text {
+                        background-color: $inbox-message-guest;
+                        float: right;
+                    }
+
+                    .arrow {
+                        background-color: $inbox-message-guest;
+                        right: -5px;
+                        left: auto;
+                    }
+                }
+            }
+        }
+
+        .input {
+            flex: 0 0 100px;
+
+            form {
+                display: flex;
+            }
+
+            button {
+                border: 0;
+                border-top: 1px solid $inbox-border;
+                border-left: 1px solid $inbox-border;
+                background-color: $inbox-background;
+                color: $inbox-input-color;
+                outline: 0;
+                cursor: pointer;
+                display: block;
+                flex: 0 0 50px;
+
+                i {
+                    transform: scaleX(-1);
+                    font-size: 20px;
+                }
+
+                &:focus,
+                &:active,
+                &:hover {
+                    i {
+                        color: darken($inbox-input-color, 30%);
+                    }
+                }
+            }
+
+            textarea {
+                background-color: $inbox-background;
+                border: 0;
+                border-top: 1px solid $inbox-border;
+                color: $inbox-input-color;
+                padding: 10px;
+                height: 120px;
+                resize: none;
+                outline: 0;
+                display: block;
+                flex: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+section.top-bar {
+    .title .content,
+    .information .content {
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    .title {
+        @include bar($top-bar-title-background, $top-bar-title-border, $top-bar-title-height);
+        font-weight: bold;
+        font-size: 10px;
+
+        .content {
+            display: flex;
+        }
+
+        .message {
+            flex: 1 0 auto;
+
+            .server-name {
+                color: $blue;
+            }
+        }
+
+        .links {
+            height: $top-bar-title-height;
+            flex: 1 0 150px;
+            text-align: right;
+            text-transform: lowercase;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            a {
+                line-height: 11px;
+                margin: 0 3px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .information {
+        @include bar($top-bar-info-background, $top-bar-info-border, $top-bar-info-height);
+
+        .status {
+            font-weight: bold;
+
+            &.online {
+                color: $status-online;
+            }
+
+            &.offline {
+                color: $status-offline;
+            }
+        }
+    }
+}

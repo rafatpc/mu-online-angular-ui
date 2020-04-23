@@ -1,0 +1,31 @@
+.character-details,
+.character-item-details,
+.guild-details,
+.guild-member-details {
+    div.title {
+        border-bottom: 1px solid $details-borders;
+        line-height: 27px;
+    }
+}
+
+.character-details,
+.guild-details,
+.guild-member-details {
+    table {
+        width: 100%;
+    }
+
+    .statistics {
+        table td {
+            width: 50%;
+
+            &:not(.status):nth-child(2) {
+                color: $details-second-cell-color;
+            }
+
+            span.status {
+                margin-right: 0;
+            }
+        }
+    }
+}

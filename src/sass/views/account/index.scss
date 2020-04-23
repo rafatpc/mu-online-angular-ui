@@ -1,0 +1,31 @@
+$account-info-cell-highlight: $highlight-color;
+
+section.account-info {
+    display: flex;
+
+    .rank {
+        flex: 0 0 192px;
+        margin-right: 20px;
+    }
+
+    .information {
+        flex: 1;
+
+        .title {
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+
+            td {
+                text-align: left;
+                width: 50%;
+
+                &:last-child {
+                    color: $account-info-cell-highlight;
+                }
+            }
+        }
+    }
+}

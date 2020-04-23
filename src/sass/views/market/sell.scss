@@ -1,0 +1,130 @@
+$market-sell-selected: $success;
+$market-sell-remove: $highlight-color-red;
+
+section.market-sell {
+    display: flex;
+
+    section.items {
+        flex: 0 0 320px;
+
+        section.vault {
+            display: block;
+            margin: 0 auto;
+
+            .selected {
+                border: 1px dashed $market-sell-selected;
+            }
+        }
+    }
+
+    section.price {
+        flex: 1;
+
+        h2 {
+            font-size: 14px;
+            margin: 20px 0 10px;
+
+            &.price {
+                margin-top: 15px; // Selected items always have margin-bottom of 5px
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+
+        #price-list,
+        .checkbox,
+        .input {
+            margin-bottom: 10px;
+        }
+
+        .merchants {
+            display: flex;
+        }
+
+        .checkbox,
+        .radio {
+            margin-right: 10px;
+
+            .box {
+                margin-right: 5px;
+            }
+        }
+
+        .remove {
+            color: $market-sell-remove;
+            font-size: 14px;
+        }
+
+        select {
+            width: 250px;
+        }
+
+        #price-list {
+            display: flex;
+            align-items: center;
+
+            .remove {
+                display: inline-block;
+                text-align: center;
+                margin: 0 10px -1px 5px;
+                width: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .actions {
+            margin-top: 20px;
+
+            a {
+                font-size: 14px;
+            }
+        }
+
+        .selected-items-row {
+            display: flex;
+            flex-wrap: wrap;
+
+            .item {
+                background-color: $character-details-item-background;
+                border: 1px solid $details-borders;
+                height: $character-details-item-dimension;
+                width: $character-details-item-dimension;
+                margin: 0 $character-details-item-spacing $character-details-item-spacing 0;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 3px;
+
+                &.wings {
+                    width: ($character-details-item-dimension * 2 + $character-details-item-spacing);
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+
+                &:hover {
+                    background-color: $character-details-item-background-hover;
+                }
+
+                .remove {
+                    font-size: 14px;
+                    position: absolute;
+                    right: 3px;
+                    top: 3px;
+                }
+
+                img {
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

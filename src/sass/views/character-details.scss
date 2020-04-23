@@ -1,0 +1,71 @@
+.character-details {
+    display: flex;
+    width: 500px;
+    margin: 0 auto;
+
+    .character {
+        flex: 0 0 200px;
+        width: 133px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h1 {
+            margin-bottom: 6px;
+        }
+    }
+
+    .inventory {
+        flex: 1;
+    }
+
+    .statistics {
+        flex: 0 0 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.character-item-details {
+    width: 500px;
+    margin: 0 auto;
+
+    .items-row {
+        max-width: ($character-details-item-per-row * ($character-details-item-dimension + $character-details-item-spacing) + $character-details-item-spacing);
+        padding-left: $character-details-item-spacing;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding-top: 10px;
+
+        .item {
+            background-color: $character-details-item-background;
+            border: 1px solid $details-borders;
+            height: $character-details-item-dimension;
+            width: $character-details-item-dimension;
+            margin: 0 $character-details-item-spacing $character-details-item-spacing 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+
+            &.wings {
+                width: ($character-details-item-dimension * 2 + $character-details-item-spacing);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background-color: $character-details-item-background-hover;
+            }
+
+            img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

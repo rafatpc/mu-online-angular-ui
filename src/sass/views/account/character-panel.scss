@@ -1,0 +1,52 @@
+$character-panel-tabs-background: $gray-dark;
+$character-panel-tabs-color: $black;
+
+section.character-panel {
+    display: flex;
+    font-size: 11px;
+
+    .character {
+        flex: 0 0 200px;
+        width: 133px;
+
+        & > .separator {
+            text-transform: lowercase;
+            text-align: center;
+            display: block;
+            margin-top: 5px;
+            font-size: 11px;
+        }
+
+        .quick-actions {
+            margin-top: 5px;
+
+            a {
+                margin: 0 5px 5px;
+            }
+        }
+    }
+
+    .options {
+        flex: 1;
+
+        .tabs {
+            .content {
+                background-color: $character-panel-tabs-background;
+                margin: 10px 0;
+                border: 0;
+
+                ul > li i {
+                    margin: 0 3px;
+                }
+            }
+
+            .pills a {
+                border-radius: 6px;
+                margin: 0 5px;
+                font-size: 11px;
+                height: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+footer {
+    .quick-links {
+        @include bar($quick-links-background, $quick-links-border, $quick-links-height);
+        text-align: center;
+    }
+
+    .credits {
+        @include bar($credits-background, $credits-border, $credits-height);
+        border-bottom: 0;
+        color: $credits-color;
+        text-align: center;
+        font-weight: bold;
+        font-size: 9px;
+    }
+}

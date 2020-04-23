@@ -1,0 +1,76 @@
+.info-block {
+    .item {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        flex: 1;
+
+        &-info {
+            color: $home-info-color;
+            font-weight: normal;
+            font-size: 10px;
+            flex: 0 1 11px;
+        }
+
+        &-name {
+            color: $home-info-name-color;
+            display: inline-block;
+            margin-bottom: 2px;
+            font-weight: bold;
+            font-size: 11px;
+            flex: 0 1 12px;
+
+            span {
+                border-bottom: 1px dashed transparent;
+            }
+        }
+
+        &-image {
+            display: flex;
+            flex: 1 1 auto;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-price {
+            font-size: 10px;
+            flex: 0 1 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .exchange-item {
+                display: flex;
+                margin-right: 5px;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 16px;
+                    height: 16px;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            & > strong {
+                margin-right: 2px;
+
+                &.free {
+                    color: $home-info-free-color;
+                }
+            }
+        }
+
+        &:focus,
+        &:hover {
+            border-bottom-color: transparent;
+
+            .item-name span {
+                border-bottom-color: $anchor-hover;
+            }
+        }
+    }
+}

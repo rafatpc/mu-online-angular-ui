@@ -1,0 +1,33 @@
+$unordered-list-height: 15px;
+
+ul {
+    margin: 5px 0;
+    list-style-type: none;
+
+    li {
+        line-height: $unordered-list-height;
+        height: $unordered-list-height;
+
+        &:before,
+        &:after {
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            line-height: $unordered-list-height;
+            height: $unordered-list-height;
+        }
+    }
+
+    &:not(.right):not(.no-bullet) li:before {
+        margin-right: 3px;
+        content: "\f101"; // Font Awesome's double arrow right (<<)
+    }
+
+    &:not(.no-bullet).right {
+        text-align: right;
+
+        & li:after {
+            content: "\f100"; // Font Awesome's double arrow left (<<)
+            margin-left: 3px;
+        }
+    }
+}

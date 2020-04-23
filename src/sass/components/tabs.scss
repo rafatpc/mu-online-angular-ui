@@ -1,0 +1,54 @@
+// TODO: Vertical & Horizontal tabs!
+
+section.tabs {
+    .pills {
+        display: flex;
+
+        a {
+            background-color: $tabs-pill-background;
+            border-radius: $tabs-pill-round-radius $tabs-pill-round-radius 0 0;
+            border: 1px solid $tabs-pills-border;
+            line-height: $tabs-pill-height;
+            height: $tabs-pill-height;
+            color: $tabs-pill-color;
+            transition: all .1s ease-in-out;
+            text-align: center;
+            font-weight: bold;
+            font-size: 10px;
+            border-right: 0;
+            flex: 1;
+
+            &:hover,
+            &:focus,
+            &:active,
+            &.selected {
+                background-color: $tabs-pill-hover-background;
+                border-bottom: 1px solid $tabs-pill-hover-background;
+            }
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                border-right: 1px solid $tabs-pills-border;
+            }
+        }
+    }
+
+    .content {
+        background-color: $tabs-content-background;
+        border: 1px solid $tabs-content-border;
+        padding: $tabs-content-spacing;
+        font-size: 11px;
+        border-top: 0;
+
+        & > div:not(.selected) {
+            display: none;
+        }
+
+        table {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+div.content-box {
+    .title {
+        height: $content-box-title-height;
+        line-height: $content-box-title-height;
+        border: 1px solid $content-box-border;
+        padding: $content-box-spacing;
+        color: $content-box-title-color;
+        @include gradient(180deg, $content-box-title-gradient);
+        font-weight: bold;
+    }
+
+    .content {
+        background-color: $content-box-background;
+        border: 1px solid $content-box-border;
+        padding: $content-box-content-spacing;
+        border-top: 0;
+    }
+}

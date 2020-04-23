@@ -1,0 +1,118 @@
+$quest-single-check: $highlight-color-green;
+$quest-single-times: $highlight-color-red;
+
+section.quest,
+section.quest-actions,
+section.quest-conditions {
+    margin-bottom: 20px;
+}
+
+section.quest {
+    h1 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+}
+
+section.quest-conditions {
+    display: flex;
+
+    .requirements,
+    .rewards {
+        flex: 1;
+
+        h1 {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+    }
+
+    .actions {
+        display: flex;
+        flex: 0 0 130px;
+        align-items: center;
+        justify-content: center;
+
+        a {
+            text-align: center;
+            font-size: 16px;
+
+            i {
+                display: block;
+                font-size: 30px;
+                margin-bottom: 5px;
+                margin: 5px 0;
+            }
+        }
+
+        .completed {
+            font-size: 40px;
+            opacity: .3;
+        }
+    }
+
+    .rewards {
+        text-align: right;
+
+        .items-row {
+            justify-content: flex-end;
+        }
+    }
+
+    .items-row,
+    .currency-row {
+        margin-bottom: 5px;
+    }
+
+    .items-row {
+        display: flex;
+        flex-wrap: wrap;
+
+        .item {
+            background-color: $character-details-item-background;
+            border: 1px solid $details-borders;
+            height: $character-details-item-dimension;
+            width: $character-details-item-dimension;
+            margin: 0 $character-details-item-spacing $character-details-item-spacing 0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 3px;
+
+            &.wings {
+                width: ($character-details-item-dimension * 2 + $character-details-item-spacing);
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:hover {
+                background-color: $character-details-item-background-hover;
+            }
+
+            .fa-check,
+            .fa-times {
+                font-size: 14px;
+                position: absolute;
+                right: 3px;
+                top: 3px;
+            }
+
+            .fa-check {
+                color: $quest-single-check;
+            }
+
+            .fa-times {
+                color: $quest-single-times;
+            }
+
+            img {
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

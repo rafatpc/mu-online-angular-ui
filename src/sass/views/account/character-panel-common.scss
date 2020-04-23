@@ -1,0 +1,62 @@
+section.character-option {
+    display: flex;
+
+    .requirements,
+    .benefits {
+        flex: 1;
+
+        ul {
+            max-width: 250px;
+        }
+    }
+
+    .benefits {
+        ul {
+            margin: 0 0 0 auto;
+        }
+    }
+
+    .action {
+        flex: 0 0 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        a {
+            display: inline-block;
+
+            &:not(.inline) {
+                font-size: 14px;
+
+                i {
+                    display: block;
+                    margin-bottom: 5px;
+                    font-size: 30px;
+                }
+            }
+
+            &.inline {
+                font-size: 14px;
+            }
+        }
+
+        &.disabled a {
+            color: $disabled;
+            cursor: not-allowed;
+            user-select: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}
+
+section.grand-reset {
+    .action {
+        flex: 0 0 100px;
+    }
+}

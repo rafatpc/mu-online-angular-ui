@@ -1,0 +1,7 @@
+body {
+    color: $gray-lightest;
+    background-image: url($background-image);
+    background-color: $background-color;
+    background-attachment: fixed;
+    @include font();
+}

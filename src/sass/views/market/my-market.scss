@@ -1,0 +1,31 @@
+section.my-market {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+
+    h1 {
+        flex: 1;
+    }
+
+    .actions {
+        flex: 0 0 250px;
+        text-align: right;
+
+        a {
+            font-size: 12px;
+            margin-right: 10px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+section.my-market-items {
+    table {
+        width: 100%;
+
+        button {}
+    }
+}

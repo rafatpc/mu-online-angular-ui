@@ -1,0 +1,31 @@
+button,
+.button {
+    @include font();
+    @include gradient(180deg, $button-gradient);
+    border: 1px solid $button-border !important;
+    color: $button-color !important;
+    border-radius: 6px;
+    cursor: pointer;
+
+    &.selected,
+    &:active,
+    &:focus,
+    &:hover {
+        @include gradient(180deg, $button-hover-gradient);
+        color: $button-color-hover !important;
+    }
+
+    &.gray {
+        @include gradient(180deg, $button-gray-gradient);
+        border: 1px solid $button-gray-border !important;
+        color: $button-gray-color !important;
+
+        &.selected,
+        &:active,
+        &:focus,
+        &:hover {
+            @include gradient(180deg, $button-gray-hover-gradient);
+            color: $button-gray-hover-color !important;
+        }
+    }
+}

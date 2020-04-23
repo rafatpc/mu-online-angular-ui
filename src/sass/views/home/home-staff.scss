@@ -1,0 +1,15 @@
+section.home-staff {
+    .info-block {
+        display: flex;
+
+        div {
+            display: flex;
+            align-items: center;
+            flex: 1;
+
+            &:last-child {
+                justify-content: flex-end;
+            }
+        }
+    }
+}

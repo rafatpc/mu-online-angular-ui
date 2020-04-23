@@ -1,0 +1,80 @@
+section.vault {
+    background-image: url($vault-slot-free);
+    position: relative;
+    width: 256px;
+    height: 480px;
+    display: inline-block;
+    user-select: none;
+    margin-right: 40px;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    .slot {
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        z-index: 0;
+        left: 0;
+        top: 0;
+
+        &.taken {
+            background-image: url($vault-slot-taken);
+        }
+    }
+
+    .item {
+        background-image: url($vault-slot-taken);
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        position: absolute;
+        padding: 2px;
+        z-index: 1;
+        left: 0;
+        top: 0;
+
+        &.gu-transit {
+            opacity: 1;
+
+            img {
+                opacity: .3;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @for $i from 1 through 5 {
+            &[data-x='#{$i}'] {
+                width: $i * 32px;
+            }
+
+            &[data-y='#{$i}'] {
+                height: $i * 32px;
+            }
+        }
+    }
+
+    @for $slot from 0 through 119 {
+        $row: floor($slot / 8);
+        $slot-x: $slot % 8;
+
+        [data-slot='#{$slot}'] {
+            @if $row != 0 {
+                top: $row * 32px;
+            }
+
+            @if $slot-x != 0 {
+                left: $slot-x * 32px;
+            }
+        }
+    }
+}

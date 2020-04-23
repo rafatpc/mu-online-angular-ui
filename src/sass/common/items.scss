@@ -1,0 +1,37 @@
+.item {
+    &-normal {
+        color: $item-normal;
+    }
+
+    &-expensive {
+        color: $item-expensive;
+    }
+
+    &-excellent {
+        color: $item-excellent;
+    }
+
+    &-socket {
+        color: $item-socket;
+    }
+
+    &-ancient {
+        background-color: $item-ancient-background;
+        color: $item-ancient;
+        padding: 1px 3px;
+        display: inline-block;
+        line-height: 1;
+    }
+
+    &-ancient-color-only {
+        color: $item-ancient-background;
+    }
+
+    &-harmony {
+        color: $item-harmony;
+    }
+
+    &-guardian {
+        color: $item-guardian;
+    }
+}

@@ -1,0 +1,76 @@
+i.fa-angle-double-right {
+    color: $green;
+}
+
+.highlight {
+    color: $highlight-color;
+
+    &.red {
+        color: $highlight-color-red;
+    }
+
+    &.green {
+        color: $highlight-color-green;
+    }
+}
+
+.separator {
+    font-size: 8px;
+    color: $navy;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.no-drag {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+strong {
+    font-weight: bold;
+}

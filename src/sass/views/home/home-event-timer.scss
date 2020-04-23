@@ -1,0 +1,12 @@
+.event-timer {
+    display: flex;
+
+    .name {
+        flex: 1;
+    }
+
+    .time {
+        flex: 1;
+        text-align: right;
+    }
+}
