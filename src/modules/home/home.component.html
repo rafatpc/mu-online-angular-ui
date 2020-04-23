@@ -1,8 +1,7 @@
 <div class="home-page">
     <section class="statistics">
         <!-- TODO: Tabs @@include('components/tabs.html') -->
-        <xweb-content-box title="Test Content Box" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum lacus urna, et sollicitudin odio
-        ultricies posuere."></xweb-content-box>
+        <xweb-content-box *ngFor="let item of content" [title]="item.title" [content]="item.content"></xweb-content-box>
     </section>
 
     <section class="news">

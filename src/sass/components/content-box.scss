@@ -1,4 +1,7 @@
-div.content-box {
+xweb-content-box {
+    display: block;
+
+    div.content-box {
     .title {
         height: $content-box-title-height;
         line-height: $content-box-title-height;
@@ -15,4 +18,6 @@ div.content-box {
         padding: $content-box-content-spacing;
         border-top: 0;
     }
+}
+
 }
