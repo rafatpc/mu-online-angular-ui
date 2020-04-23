@@ -5,6 +5,9 @@
         "paths": {
             "@component/*": [
                 "src/components/*"
+            ],
+            "@service/*": [
+                "src/services/*"
             ]
         },
         "outDir": "./dist/out-tsc",

@@ -22,6 +22,11 @@ header {
             width: $login-width;
             margin: 0 10px 0 auto;
 
+            .loading {
+                margin: 0 auto;
+                display: block;
+            }
+
             h2 {
                 text-align: right;
                 color: $login-title-color;

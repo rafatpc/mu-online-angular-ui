@@ -28,7 +28,7 @@ div.checkbox {
         .fa-check {
             color: $checkbox-color;
             pointer-events: none;
-            margin-right: -1px; // Visual fix
+            margin-right: -2px; // Visual fix
             font-size: 10px;
             display: none;
         }
