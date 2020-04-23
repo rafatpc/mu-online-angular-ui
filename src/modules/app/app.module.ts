@@ -3,20 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { LoginComponent } from './login/login.component';
+import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { ContentComponent } from './content/content.component';
+import { FooterComponent } from './footer/footer.component';
 import { CheckboxComponent } from '@component/checkbox/checkbox.components';
-import { HeaderComponent } from '@component/header/header.component';
-import { NavigationComponent } from '@component/navigation/navigation.component';
-import { TopBarComponent } from '@component/top-bar/top-bar.component';
-import { FooterComponent } from '@component/footer/footer.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        CheckboxComponent,
         TopBarComponent,
+        LoginComponent,
         HeaderComponent,
         NavigationComponent,
-        FooterComponent
+        ContentComponent,
+        FooterComponent,
+        CheckboxComponent
     ],
     imports: [
         BrowserModule,

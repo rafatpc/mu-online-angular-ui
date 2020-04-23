@@ -1,0 +1,14 @@
+<nav>
+    <div class="background-fade"></div>
+    <div id="main-menu" class="main">
+        <a *ngFor="let route of routes" [routerLink]="route.route" [routerLinkActiveOptions]="{exact: true}"
+           (mouseover)="displaySubMenu(route.children)" routerLinkActive="active">{{route.title}}</a>
+        <div class="filler"></div>
+    </div>
+    <div id="sub-menu" class="submenu">
+        <ng-container *ngFor="let item of submenu; let index = index">
+            <a [routerLink]="item.route">{{item.title}}</a>
+            <i *ngIf="index !== (submenu.length - 1)" class="fas fa-angle-double-right"></i>
+        </ng-container>
+    </div>
+</nav>
