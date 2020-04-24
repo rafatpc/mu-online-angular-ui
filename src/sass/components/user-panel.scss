@@ -1,0 +1,40 @@
+xweb-user-panel {
+    margin: 0 10px 0 auto;
+    text-align: right;
+
+    h2 {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .currency {
+        color: $navy;
+
+        .block {
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px transparentize($yellow, 0.8);
+        }
+    }
+
+    .links {
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin: 1px 0;
+
+            i {
+                margin-left: 2px;
+            }
+
+            &.logout {
+                margin-top: 5px;;
+
+                i {
+                    margin-right: 2px;
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

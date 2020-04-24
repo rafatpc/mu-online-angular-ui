@@ -32,7 +32,9 @@ export class AuthenticationService {
 
     logout() {
         localStorage.removeItem('current_user');
+        this.currentUserSubject.next(null);
         sessionStorage.clear();
+        this.tokenSubject.next(null);
     }
 
     get accessToken(): string {

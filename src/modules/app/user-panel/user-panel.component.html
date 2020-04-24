@@ -1,0 +1,30 @@
+<section class="user-panel">
+    <h2 class="welcome">
+        Welcome, <strong>{{user}}</strong>!
+    </h2>
+    <div class="currency">
+        <div class="block">
+            Credits <span class="highlight">0</span> |
+            WcoinC <span class="highlight">0</span>
+        </div>
+        <div class="block">
+            WcoinP <span class="highlight">0</span> |
+            GoblinP <span class="highlight">0</span>
+        </div>
+    </div>
+
+    <ul class="links no-bullet">
+        <li *ngFor="let item of quickLinks">
+            <a [routerLink]="item.route" class="highlight">
+                {{item.title}}
+                <i class="fas fa-angle-left"></i>
+            </a>
+        </li>
+        <li class="logout">
+            <a class="highlight" (click)="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+                LogOut
+            </a>
+        </li>
+    </ul>
+</section>

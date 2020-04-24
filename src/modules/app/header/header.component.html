@@ -3,6 +3,11 @@
         <img src="/assets/images/logo.png" alt="Mu Online Logo" />
     </div>
     <div class="login">
-        <xweb-login></xweb-login>
+        <ng-container *ngIf="isLoggedIn; else loginForm">
+            <xweb-user-panel></xweb-user-panel>
+        </ng-container>
+        <ng-template #loginForm>
+            <xweb-login></xweb-login>
+        </ng-template>
     </div>
 </header>

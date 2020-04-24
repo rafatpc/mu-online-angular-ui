@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { LoginComponent } from './login/login.component';
+import { UserPanelComponent } from './user-panel/user-panel.component';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
@@ -21,6 +22,7 @@ import { JwtInterceptor } from 'src/interceptors/jwt.interceptor';
         AppComponent,
         TopBarComponent,
         LoginComponent,
+        UserPanelComponent,
         HeaderComponent,
         NavigationComponent,
         ContentComponent,
