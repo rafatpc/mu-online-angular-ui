@@ -1,25 +1,25 @@
 .pk-level {
-    &-hero-2 {
-        color: $pk-level-hero-2;
-    }
-
-    &-hero-1 {
+    &-1 {
         color: $pk-level-hero-1;
     }
 
-    &-commoner {
+    &-2 {
+        color: $pk-level-hero-2;
+    }
+
+    &-3 {
         color: $pk-level-commoner;
     }
 
-    &-phonoman-1 {
+    &-4 {
         color: $pk-level-phonoman-1;
     }
 
-    &-phonoman-2 {
+    &-5 {
         color: $pk-level-phonoman-2;
     }
 
-    &-murderer {
+    &-6 {
         color: $pk-level-murderer;
     }
 }

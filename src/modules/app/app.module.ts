@@ -14,7 +14,7 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { CheckboxComponent } from '@components/checkbox/checkbox.components';
-import { AuthenticationService } from '@service/authentication.service';
+import { AuthenticationService } from '@services/authentication.service';
 import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
 
 @NgModule({

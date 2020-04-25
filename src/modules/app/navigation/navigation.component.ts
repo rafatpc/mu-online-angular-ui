@@ -27,7 +27,6 @@ export class NavigationComponent {
 
     displaySubMenu(items: Array<MenuItem>) {
         this.submenu = items || [];
-        console.log(this.submenu);
     }
 }
 

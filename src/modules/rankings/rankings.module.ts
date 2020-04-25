@@ -6,8 +6,6 @@ import { RankingsComponent } from './rankings.component';
 import { StatusComponent } from '@components/status/status.component';
 import { CharactersComponent } from './characters/characters.component';
 
-console.log('CMP>>', StatusComponent);
-
 @NgModule({
     declarations: [
         RankingsComponent,

@@ -1,7 +1,7 @@
 <table class="rankings characters">
     <colgroup>
         <col style="width: 20px;" />
-        <col style="width: 150px;" />
+        <col style="width: 250px;" />
         <col style="width: 100px;" />
         <col style="width: 90px;" />
         <col style="width: 150px;" />
@@ -26,18 +26,22 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let character of characters; let index = index">
+        <tr *ngFor="let Character of characters; let index = index">
             <td class="center">{{index + 1}}</td>
             <td>
-                <xweb-status [type]="character.Online ? 'online' : 'offline'"></xweb-status>
-                <a [routerLink]="['/character', character.Name]">{{character.Name}}</a>
+                <xweb-status [type]="Character.Online ? 'online' : 'offline'"></xweb-status>
+                <ng-container *ngIf="Character.Guild !== null">
+                    [<a [routerLink]="['/guild', Character.Guild.G_Name]" [innerText]="Character.Guild.G_Name"></a>]
+                </ng-container>
+                <a [routerLink]="['/character', Character.Name]" [class]="'pk-level-' + Character.PkLevel"
+                   [innerText]="Character.Name"></a>
             </td>
             <td>
-                <img [src]="character.Class" alt="Blade Master" />
+                <img [src]="Character.ClassImage" [alt]="Character.ClassName" />
             </td>
-            <td class="center">{{character.Honor}}</td>
-            <td class="center">{{character.cLevel}} | {{character.Resets}} | {{character.GrandResets}}</td>
-            <td class="right">{{character.Map}}</td>
+            <td class="center">{{Character.Honor}}</td>
+            <td class="center">{{Character.cLevel}} | {{Character.Resets}} | {{Character.GrandResets}}</td>
+            <td class="right">{{Character.Map}}</td>
         </tr>
     </tbody>
 </table>
