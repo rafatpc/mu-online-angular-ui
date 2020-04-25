@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
+import { User } from '@type/user.types';
+import { LoginResponse, JwtToken } from '@type/auth.types';
 import { environment } from '../environments/environment';
 
 @Injectable({ providedIn: 'root' })
@@ -11,63 +13,62 @@ export class AuthenticationService {
     public currentUser: Observable<User>;
 
     private tokenSubject: BehaviorSubject<string>;
-    public token: Observable<string>;
+    public token: Observable<JwtToken>;
+
+    public static AccessToken: JwtToken;
 
     constructor(private http: HttpClient) {
         this.retrieveSession();
+
+        if (this.tokenSubject.value) {
+            this.verifySession();
+        }
     }
 
     login(username: string, password: string) {
         return this.http.post<any>(`${environment.apiUrl}/user/login`, { username, password })
             .pipe(map((result: LoginResponse) => {
-                localStorage.setItem('current_user', JSON.stringify(result.user));
-                sessionStorage.setItem('access_token', result.token);
-
-                this.currentUserSubject.next(result.user);
-                this.tokenSubject.next(result.token);
-
+                this.updateCurrentUser(result.user);
+                this.updateAccessToken(result.token);
                 return result;
             }));
     }
 
     logout() {
-        localStorage.removeItem('current_user');
-        this.currentUserSubject.next(null);
-        sessionStorage.clear();
-        this.tokenSubject.next(null);
+        this.updateCurrentUser(null);
+        this.updateAccessToken(null);
     }
 
-    get accessToken(): string {
-        return this.tokenSubject.value;
+    private updateAccessToken(token: JwtToken) {
+        AuthenticationService.AccessToken = token;
+        sessionStorage.setItem('access_token', token);
+        this.tokenSubject.next(token);
+    }
+
+    private updateCurrentUser(user: User) {
+        localStorage.setItem('current_user', JSON.stringify(user));
+        this.currentUserSubject.next(user);
     }
 
     private retrieveSession() {
-        // TODO: Verify the token
         const savedUser = JSON.parse(localStorage.getItem('current_user'));
         this.currentUserSubject = new BehaviorSubject<User>(savedUser);
         this.currentUser = this.currentUserSubject.asObservable();
 
         const savedToken = sessionStorage.getItem('access_token');
-        this.tokenSubject = new BehaviorSubject<string>(savedToken);
+        this.tokenSubject = new BehaviorSubject<JwtToken>(savedToken);
         this.token = this.tokenSubject.asObservable();
+
+        AuthenticationService.AccessToken = savedToken;
+    }
+
+    private verifySession() {
+        const ENDPOINT = `${environment.apiUrl}/user/verify`;
+
+        return this.http.post<null>(ENDPOINT, {}).subscribe(() => {
+            // Verification passed
+        }, () => {
+            this.logout();
+        });
     }
 }
-
-type User = {
-    memb_guid: number;
-    memb___id: string;
-    mail_addr: string;
-    memb_name: string;
-    sno__numb: string;
-    bloc_code: string;
-    ctl1_code: string;
-    IsVip: number;
-    VipExpirationTime: number;
-}
-
-type LoginResponse = {
-    user: User;
-    token: JwtToken
-}
-
-type JwtToken = string;
