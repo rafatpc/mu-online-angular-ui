@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '@services/authentication.service';
+import { SessionService } from '@services/session.service';
 
 @Component({
     selector: 'xweb-user-panel',
@@ -13,8 +14,11 @@ export class UserPanelComponent {
         { route: '/account/vote', title: 'Vote' },
     ];
 
-    constructor(private auth: AuthenticationService) {
-        this.auth.currentUser.subscribe(user => {
+    constructor(
+        private auth: AuthenticationService,
+        private session: SessionService
+    ) {
+        this.session.currentUser.subscribe(user => {
             if (!user) return;
             this.user = user.memb___id;
         });

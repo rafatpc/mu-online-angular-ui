@@ -15,7 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 
 import { CheckboxComponent } from '@components/checkbox/checkbox.components';
 import { AuthenticationService } from '@services/authentication.service';
-import { UserService } from '@services/user.service';
+import { SessionService } from '@services/session.service';
 import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
 
 @NgModule({
@@ -39,7 +39,7 @@ import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         AuthenticationService,
-        UserService
+        SessionService
     ],
     bootstrap: [AppComponent],
     exports: []

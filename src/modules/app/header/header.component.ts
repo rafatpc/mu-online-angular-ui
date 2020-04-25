@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from '@services/authentication.service';
+import { SessionService } from '@services/session.service';
 
 @Component({
     selector: 'xweb-header',
@@ -8,10 +8,8 @@ import { AuthenticationService } from '@services/authentication.service';
 export class HeaderComponent {
     isLoggedIn: boolean = true;
 
-    constructor(
-        private auth: AuthenticationService
-    ) {
-        this.auth.token.subscribe(token => {
+    constructor(private session: SessionService) {
+        this.session.token.subscribe(token => {
             this.isLoggedIn = !!token;
         });
     }
