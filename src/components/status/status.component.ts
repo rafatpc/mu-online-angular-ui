@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'xweb-status',
-    inputs: ['type'],
     templateUrl: './status.component.html'
 })
 export class StatusComponent {
-    type: string
+    @Input() type: string
 }

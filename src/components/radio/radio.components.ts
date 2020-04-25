@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     selector: 'xweb-radio',
-    inputs: ['id: checbox-id', 'name', 'label', 'checked'],
     templateUrl: './radio.component.html'
 })
 export class RadioComponent {
-    name: string;
-    value: string;
-    label: string;
-    id: string;
-    checked: boolean = false;
+    @Input() name: string;
+    @Input() value: string;
+    @Input() label: string;
+    @Input('radio-id') id: string;
+    @Input() checked: boolean = false;
 }

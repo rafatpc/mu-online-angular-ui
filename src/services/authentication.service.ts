@@ -67,5 +67,7 @@ type User = {
 
 type LoginResponse = {
     user: User;
-    token: string
+    token: JwtToken
 }
+
+type JwtToken = string;

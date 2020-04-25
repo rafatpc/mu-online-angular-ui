@@ -5,6 +5,7 @@ import { NotFoundComponent } from '../404';
 const routes: Routes = [
     { path: '', loadChildren: () => import('../home/home.module').then(m => m.HomeModule) },
     { path: 'downloads', loadChildren: () => import('../downloads/downloads.module').then(m => m.DownloadsModule) },
+    { path: 'rankings', loadChildren: () => import('../rankings/rankings.module').then(m => m.RankingsModule) },
     { path: '**', component: NotFoundComponent }
 ];
 

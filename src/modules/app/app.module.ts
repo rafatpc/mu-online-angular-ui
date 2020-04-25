@@ -13,9 +13,9 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { CheckboxComponent } from '@component/checkbox/checkbox.components';
+import { CheckboxComponent } from '@components/checkbox/checkbox.components';
 import { AuthenticationService } from '@service/authentication.service';
-import { JwtInterceptor } from 'src/interceptors/jwt.interceptor';
+import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
 
 @NgModule({
     declarations: [

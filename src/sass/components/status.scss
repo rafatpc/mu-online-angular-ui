@@ -1,17 +1,21 @@
-span.status {
+xweb-status {
     display: inline-block;
-    margin-right: 2px;
-    border-radius: 100%;
-    width: 9px;
-    height: 9px;
+    margin-right: 4px;
 
-    &.online {
-        background-color: $status-online;
-        border: 1px solid darken($status-online, 10%);
-    }
+    span.status {
+        display: block;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
 
-    &.offline {
-        background-color: $status-offline;
-        border: 1px solid darken($status-offline, 10%);
+        &.online {
+            background-color: $status-online;
+            border: 1px solid darken($status-online, 10%);
+        }
+
+        &.offline {
+            background-color: $status-offline;
+            border: 1px solid darken($status-offline, 10%);
+        }
     }
 }
