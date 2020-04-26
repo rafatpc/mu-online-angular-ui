@@ -25,3 +25,13 @@ export type CharacterData = {
     PkLevel: number;
     PkName: PkStatusName;
 };
+
+export type OnlineCharacter = {
+    ServerName: string;
+    ConnectTM: Date;
+    DisConnectTM: Date;
+    OnlineSince: string;
+    OnlineHours: number;
+    Guild: Partial<GuildMember>;
+    Character: Partial<CharacterData>;
+};

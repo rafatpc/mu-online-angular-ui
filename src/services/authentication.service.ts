@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { User } from '@type/user.types';
-import { LoginResponse, JwtToken } from '@type/auth.types';
+import { LoginResponse } from '@type/auth.types';
 import { environment } from '../environments/environment';
 import { SessionService } from './session.service';
 
