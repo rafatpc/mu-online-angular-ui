@@ -6,12 +6,14 @@ import { RankingsRoutingModule } from './rankings-routing.module';
 import { RankingsComponent } from './rankings.component';
 import { CharactersComponent } from './characters/characters.component';
 import { OnlineComponent } from './online/online.component';
+import { GuildsComponent } from './guilds/guilds.component';
 
 @NgModule({
     declarations: [
         StatusComponent,
         RankingsComponent,
         CharactersComponent,
+        GuildsComponent,
         OnlineComponent
     ],
     imports: [
