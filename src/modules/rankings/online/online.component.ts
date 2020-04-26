@@ -43,10 +43,10 @@ export class OnlineComponent implements OnInit {
 
         return {
             ...Data,
+            OnlineSince,
             Character: {
                 ...Character,
                 ...ClassData,
-                OnlineSince,
                 PkName: PkStatusDecode[Character.PkLevel],
                 Map: MapDecode[Character.MapNumber],
                 cLevel: padZeros(Character.cLevel),

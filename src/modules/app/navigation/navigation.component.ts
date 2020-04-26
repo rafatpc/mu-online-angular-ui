@@ -20,7 +20,7 @@ export class NavigationComponent {
                 { route: '/rankings/banned', title: 'banned' },
                 { route: '/rankings/admins', title: 'admins' },
                 { route: '/rankings/devil-square', title: 'devil square' },
-                { route: '/rankings/blood-castle', title: 'blood-castle' }
+                { route: '/rankings/blood-castle', title: 'blood castle' }
             ]
         },
     ];

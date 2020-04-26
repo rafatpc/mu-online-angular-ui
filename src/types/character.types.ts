@@ -24,7 +24,6 @@ export type CharacterData = {
     MapNumber: number;
     PkLevel: number;
     PkName: PkStatusName;
-    OnlineSince?: string;
 };
 
 export type OnlineCharacter = {
