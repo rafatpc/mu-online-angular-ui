@@ -216,3 +216,24 @@ $item-ancient-background: #3d3bc8;
 $item-ancient: #20ed3c;
 $item-harmony: #ffcc19;
 $item-guardian: #b093b1;
+
+// Guild Mark
+$guild-mark-size: 2px;
+$guild-mark-colors: (
+    '0': #ffffff,
+    '1': #000000,
+    '2': #8c8a8d,
+    '3': #cccccc,
+    '4': #fe0000,
+    '5': #ff8a00,
+    '6': #ffff00,
+    '7': #8cff01,
+    '8': #00ff00,
+    '9': #01ff8d,
+    'a': #00ffff,
+    'b': #008aff,
+    'c': #0000fe,
+    'd': #8c00ff,
+    'e': #ff00fe,
+    'f': #ff008c
+);

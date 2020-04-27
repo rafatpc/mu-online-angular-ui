@@ -24,6 +24,7 @@
         <tr *ngFor="let Guild of guilds; let index = index">
             <td class="center">{{index + 1}}</td>
             <td>
+                <xweb-guild-mark [mark]="Guild.G_Mark"></xweb-guild-mark>
                 <a [routerLink]="['/guild', Guild.G_Name]" [innerText]="Guild.G_Name"></a>
             </td>
             <td>
