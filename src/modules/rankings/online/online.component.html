@@ -29,10 +29,10 @@
             <td class="center">{{index + 1}}</td>
             <td>
                 <ng-container *ngIf="Data.Guild !== null">
-                    [<a [routerLink]="['/guild', Data.Guild.G_Name]" [innerText]="Data.Guild.G_Name"></a>]
+                    [<a [routerLink]="['/details/guild', Data.Guild.G_Name]" [innerText]="Data.Guild.G_Name"></a>]
                 </ng-container>
-                <a [routerLink]="['/character', Data.Character.Name]" [class]="'pk-level-' + Data.Character.PkLevel"
-                   [innerText]="Data.Character.Name"></a>
+                <a [routerLink]="['/details/character', Data.Character.Name]"
+                   [class]="'pk-level-' + Data.Character.PkLevel" [innerText]="Data.Character.Name"></a>
             </td>
             <td>
                 <img [src]="Data.Character.ClassImage" [alt]="Data.Character.ClassName" />

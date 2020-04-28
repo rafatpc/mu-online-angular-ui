@@ -1,6 +1,4 @@
 <main>
     <router-outlet></router-outlet>
-    <ng-container *ngIf="loading">
-        <img src="../../../assets/images/loading.gif" alt="Loading..." />
-    </ng-container>
+    <xweb-loading [show]="loading"></xweb-loading>
 </main>

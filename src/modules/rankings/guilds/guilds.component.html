@@ -25,10 +25,10 @@
             <td class="center">{{index + 1}}</td>
             <td>
                 <xweb-guild-mark [mark]="Guild.G_Mark"></xweb-guild-mark>
-                <a [routerLink]="['/guild', Guild.G_Name]" [innerText]="Guild.G_Name"></a>
+                <a [routerLink]="['/details/guild', Guild.G_Name]" [innerText]="Guild.G_Name"></a>
             </td>
             <td>
-                <a [routerLink]="['/character', Guild.G_Master]" [innerText]="Guild.G_Master"></a>
+                <a [routerLink]="['/details/character', Guild.G_Master]" [innerText]="Guild.G_Master"></a>
             </td>
             <td class="right">{{Guild.G_Members.length}}</td>
             <td class="right">{{Guild.G_Score}}</td>

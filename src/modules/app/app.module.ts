@@ -13,10 +13,11 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { CheckboxComponent } from '@components/checkbox/checkbox.components';
 import { AuthenticationService } from '@services/authentication.service';
 import { SessionService } from '@services/session.service';
+
 import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
+import { ComponentsModule } from '../shared/components.module';
 
 @NgModule({
     declarations: [
@@ -27,11 +28,11 @@ import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
         HeaderComponent,
         NavigationComponent,
         ContentComponent,
-        FooterComponent,
-        CheckboxComponent
+        FooterComponent
     ],
     imports: [
         BrowserModule,
+        ComponentsModule,
         FormsModule,
         HttpClientModule,
         AppRoutingModule
