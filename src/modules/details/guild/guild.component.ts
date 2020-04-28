@@ -3,18 +3,32 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../../environments/environment';
 import { GuildData } from '@type/guild.types';
+import { ActivatedRoute } from '@angular/router';
+import { GuildService } from '@services/guild.service';
 
 @Component({
     templateUrl: './guild.component.html'
 })
 export class GuildComponent implements OnInit {
-    guilds: Array<GuildData> = [];
+    loading: boolean = true;
+    Guild: GuildData = {} as GuildData;
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private guildService: GuildService,
+        private route: ActivatedRoute
+    ) { }
 
     ngOnInit() {
-        return this.http.get<any>(`${environment.apiUrl}/rankings/guilds`).subscribe((data: GuildData[]) => {
-            this.guilds = data;
+        return this.route.params.subscribe((params: { name: string }) => {
+            this.getGuildDetails(params.name);
+        });
+    }
+
+    private getGuildDetails(name: string) {
+        return this.guildService.getGuildDetails(name).subscribe((data: GuildData) => {
+            console.log(data);
+            this.Guild = data;
+            this.loading = false;
         });
     }
 }

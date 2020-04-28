@@ -1,1 +1,58 @@
-<h1>Guild Info...</h1>
+<xweb-loading [show]="loading"></xweb-loading>
+<ng-container *ngIf="!loading">
+    <section class="guild-details">
+        <div class="guild">
+            <h1 id="guild-name">{{Guild.G_Name}}</h1>
+            <div class="img-wrapper">
+                <xweb-guild-mark [mark]="Guild.G_Mark" size="lg"></xweb-guild-mark>
+            </div>
+        </div>
+        <div class="statistics">
+            <div class="title text-center">
+                <strong>Guild Information</strong>
+            </div>
+            <table class="transparent">
+                <tbody>
+                    <tr>
+                        <td>Score</td>
+                        <td>21</td>
+                    </tr>
+                    <tr>
+                        <td>Master</td>
+                        <td>
+                            <a href="#/character/RaFa">RaFa</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Members</td>
+                        <td>{{Guild.G_Members?.length}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="guild-member-details">
+        <div class="title text-center">
+            <strong>Members</strong>
+        </div>
+        <table class="transparent">
+            <colgroup>
+                <col />
+                <col style="width: 100px;" />
+                <col style="width: 150px;" />
+            </colgroup>
+            <tbody>
+                <tr *ngFor="let Character of Guild.G_Members;">
+                    <td>
+                        <xweb-status type="online"></xweb-status>
+                        <a [routerLink]="['/details/character', Character.Name]" [innerText]="Character.Name"></a>
+                    </td>
+                    <td>
+                        <img src="/assets/classes/blade-master.jpg" alt="Blade Master" />
+                    </td>
+                    <td class="right">Guild Master</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</ng-container>

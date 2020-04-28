@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
 
 @Component({
     selector: 'xweb-guild-mark',
@@ -10,6 +10,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GuildMarkComponent implements OnInit {
     @Input() mark: string;
+
+    @Input()
+    @HostBinding('class')
+    size: string = 'xs';
 
     markMatrix: string[][] = [];
 

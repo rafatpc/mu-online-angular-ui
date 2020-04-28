@@ -6,6 +6,7 @@ import { GuildComponent } from './guild/guild.component';
 import { DetailsRoutingModule } from './details-routing.module';
 import { ComponentsModule } from '../shared/components.module';
 import { CharacterService } from '@services/character.service';
+import { GuildService } from '@services/guild.service';
 
 @NgModule({
     declarations: [
@@ -18,7 +19,8 @@ import { CharacterService } from '@services/character.service';
         DetailsRoutingModule
     ],
     providers: [
-        CharacterService
+        CharacterService,
+        GuildService
     ]
 })
 export class DetailsModule { }
