@@ -6,6 +6,7 @@ export type PkStatusName = string;
 
 export type CharacterClass = {
     Name: string;
+    Code: number | number[];
     Image: string;
     CharacterImage: string;
 };

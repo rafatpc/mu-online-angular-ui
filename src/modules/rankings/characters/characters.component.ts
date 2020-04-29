@@ -7,13 +7,15 @@ import { CharacterService } from '@services/character.service';
     templateUrl: './characters.component.html'
 })
 export class CharactersComponent implements OnInit {
-    characters: Array<CharacterData> = [];
+    characters: CharacterData[] = [];
+    loading: boolean = true;
 
     constructor(private characterService: CharacterService) { }
 
     ngOnInit() {
         return this.characterService.getRankings().subscribe((data: CharacterData[]) => {
             this.characters = data;
+            this.loading = false;
         });
     }
 }

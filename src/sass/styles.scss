@@ -4,6 +4,9 @@
 // 3-rd Party
 @import 'vendor/reset';
 
+// Toastr
+@import '~ngx-toastr/toastr';
+
 // Custom components
 @import 'components/body';
 @import 'components/global';
@@ -20,6 +23,7 @@
 @import 'components/status';
 @import 'components/tabs';
 @import 'components/table';
+@import 'components/toastr';
 
 // Main layout
 @import 'components/top-bar';

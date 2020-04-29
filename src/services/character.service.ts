@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment';
-import { CharacterData } from '@type/character.types';
+import { CharacterData, OnlineCharacter } from '@type/character.types';
 
 @Injectable({ providedIn: 'root' })
 export class CharacterService {
@@ -14,6 +14,10 @@ export class CharacterService {
 
     getCharacterDetails(name: string): Observable<CharacterData> {
         return this.http.get<CharacterData>(`${environment.apiUrl}/character/${name}/extended`);
+    }
+
+    getOnlineCharacters() {
+        return this.http.get<OnlineCharacter[]>(`${environment.apiUrl}/rankings/online`);
     }
 
     getRankings(): Observable<CharacterData[]> {

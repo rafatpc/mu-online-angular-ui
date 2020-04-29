@@ -20,7 +20,11 @@
                     <tr>
                         <td>Master</td>
                         <td>
-                            <a href="#/character/RaFa">RaFa</a>
+                            <ng-template let-GuildMaster
+                                         [ngTemplateOutletContext]="{ $implicit: (Guild.G_Members | GuildMaster).Character.Name }"
+                                         [ngTemplateOutlet]="href" #href>
+                                <a [routerLink]="['/details/character', GuildMaster]" [innerText]="GuildMaster"></a>
+                            </ng-template>
                         </td>
                     </tr>
                     <tr>
@@ -42,15 +46,16 @@
                 <col style="width: 150px;" />
             </colgroup>
             <tbody>
-                <tr *ngFor="let Character of Guild.G_Members;">
+                <tr *ngFor="let Member of Guild.G_Members;">
                     <td>
                         <xweb-status type="online"></xweb-status>
-                        <a [routerLink]="['/details/character', Character.Name]" [innerText]="Character.Name"></a>
+                        <a [routerLink]="['/details/character', Member.Character.Name]"
+                           [innerText]="Member.Character.Name"></a>
                     </td>
                     <td>
-                        <img src="/assets/classes/blade-master.jpg" alt="Blade Master" />
+                        <img [src]="Member.Character.Class | ClassImage" [alt]="Member.Character.Class | ClassName" />
                     </td>
-                    <td class="right">Guild Master</td>
+                    <td class="right" [innerHTML]="Member.G_Level | GuildPosition"></td>
                 </tr>
             </tbody>
         </table>

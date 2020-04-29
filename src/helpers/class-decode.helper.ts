@@ -3,6 +3,7 @@ import { CharacterClass } from '@type/character.types';
 export abstract class ClassDecode {
     // Dark Wizard
     static readonly DarkWizard: CharacterClass = {
+        Code: 0,
         Name: 'Dark Wizard',
         Image: '/assets/classes/dark-wizard.jpg',
         CharacterImage: '/assets/classes/dark-wizard-character.png'
@@ -11,6 +12,7 @@ export abstract class ClassDecode {
 
     // Soul Master
     static readonly SoulMaster: CharacterClass = {
+        Code: 1,
         Name: 'Soul Master',
         Image: '/assets/classes/soul-master.jpg',
         CharacterImage: '/assets/classes/dark-wizard-character.png'
@@ -19,6 +21,7 @@ export abstract class ClassDecode {
 
     // Grand Master
     static readonly GrandMaster: CharacterClass = {
+        Code: [2, 3],
         Name: 'Grand Master',
         Image: '/assets/classes/grand-master.jpg',
         CharacterImage: '/assets/classes/dark-wizard-character.png'
@@ -28,6 +31,7 @@ export abstract class ClassDecode {
 
     // Dark Knight
     static readonly DarkKnight: CharacterClass = {
+        Code: 16,
         Name: 'Dark Knight',
         Image: '/assets/classes/dark-knight.jpg',
         CharacterImage: '/assets/classes/dark-knight-character.png'
@@ -36,6 +40,7 @@ export abstract class ClassDecode {
 
     // Blade Knight
     static readonly BladeKnight: CharacterClass = {
+        Code: 17,
         Name: 'Blade Knight',
         Image: '/assets/classes/blade-knight.jpg',
         CharacterImage: '/assets/classes/dark-knight-character.png'
@@ -44,6 +49,7 @@ export abstract class ClassDecode {
 
     // Blade Master
     static readonly BladeMaster: CharacterClass = {
+        Code: [18, 19],
         Name: 'Blade Master',
         Image: '/assets/classes/blade-master.jpg',
         CharacterImage: '/assets/classes/dark-knight-character.png'
@@ -53,6 +59,7 @@ export abstract class ClassDecode {
 
     // Elf
     static readonly Elf: CharacterClass = {
+        Code: 32,
         Name: 'Fairy Elf',
         Image: '/assets/classes/fairy-elf.jpg',
         CharacterImage: '/assets/classes/fairy-elf-character.png'
@@ -61,6 +68,7 @@ export abstract class ClassDecode {
 
     // Muse Elf
     static readonly MuseElf: CharacterClass = {
+        Code: 33,
         Name: 'Muse Elf',
         Image: '/assets/classes/muse-elf.jpg',
         CharacterImage: '/assets/classes/fairy-elf-character.png'
@@ -69,6 +77,7 @@ export abstract class ClassDecode {
 
     // High Elf
     static readonly HighElf: CharacterClass = {
+        Code: [34, 35],
         Name: 'High Elf',
         Image: '/assets/classes/high-elf.jpg',
         CharacterImage: '/assets/classes/fairy-elf-character.png'
@@ -78,6 +87,7 @@ export abstract class ClassDecode {
 
     // Duel Master
     static readonly MagicGladiator: CharacterClass = {
+        Code: 48,
         Name: 'Magic Gladiator',
         Image: '/assets/classes/magic-gladiator.jpg',
         CharacterImage: '/assets/classes/magic-gladiator-character.png'
@@ -86,6 +96,7 @@ export abstract class ClassDecode {
 
     // Duel Master
     static readonly DuelMaster: CharacterClass = {
+        Code: [49, 50],
         Name: 'Duel Master',
         Image: '/assets/classes/duel-master.jpg',
         CharacterImage: '/assets/classes/magic-gladiator-character.png'
@@ -95,6 +106,7 @@ export abstract class ClassDecode {
 
     // Dark Lord
     static readonly DarkLord: CharacterClass = {
+        Code: 64,
         Name: 'Dark Lord',
         Image: '/assets/classes/dark-lord.jpg',
         CharacterImage: '/assets/classes/dark-lord-character.png'
@@ -103,6 +115,7 @@ export abstract class ClassDecode {
 
     // Lord Emperor
     static readonly LordEmperor: CharacterClass = {
+        Code: [65, 66],
         Name: 'Lord Emperor',
         Image: '/assets/classes/lord-emperor.jpg',
         CharacterImage: '/assets/classes/dark-lord-character.png'
@@ -112,6 +125,7 @@ export abstract class ClassDecode {
 
     // Summoner
     static readonly Summoner: CharacterClass = {
+        Code: 80,
         Name: 'Summoner',
         Image: '/assets/classes/summoner.jpg',
         CharacterImage: '/assets/classes/bloody-summoner-character.png'
@@ -120,6 +134,7 @@ export abstract class ClassDecode {
 
     // Bloody Summoner
     static readonly BloodySummoner: CharacterClass = {
+        Code: 81,
         Name: 'Bloody Summoner',
         Image: '/assets/classes/bloody-summoner.jpg',
         CharacterImage: '/assets/classes/bloody-summoner-character.png'
@@ -128,6 +143,7 @@ export abstract class ClassDecode {
 
     // Dimension Master
     static readonly DimensionMaster: CharacterClass = {
+        Code: [82, 83],
         Name: 'Dimension Master',
         Image: '/assets/classes/dimension-master.jpg',
         CharacterImage: '/assets/classes/bloody-summoner-character.png'
@@ -137,6 +153,7 @@ export abstract class ClassDecode {
 
     // Undefined
     static readonly Undefined: CharacterClass = {
+        Code: null,
         Name: 'Undefined',
         Image: '/assets/classes/undefined.jpg',
         CharacterImage: '/assets/classes/undefined-character.png'

@@ -1,46 +1,52 @@
-<h1 class="rankings-heading">Online Characters</h1>
-<table class="rankings characters">
-    <colgroup>
-        <col style="width: 20px;" />
-        <col style="width: 250px;" />
-        <col style="width: 100px;" />
-        <col style="width: 150px;" />
-        <col style="width: 130px;" />
-        <col style="width: 130px;" />
-    </colgroup>
-    <thead>
-        <tr>
-            <th class="center">#</th>
-            <th>Name</th>
-            <th>Class</th>
-            <th class="center">
-                <a href="#/rankings/characters/sort" class="highlight">Lvl</a>
-                <i class="separator">|</i>
-                <a href="#/rankings/characters/sort" class="highlight">Res</a>
-                <i class="separator">|</i>
-                <a href="#/rankings/characters/sort" class="highlight">GRes</a>
-            </th>
-            <th class="right">Online Since</th>
-            <th class="right">Location</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let Data of characters; let index = index">
-            <td class="center">{{index + 1}}</td>
-            <td>
-                <ng-container *ngIf="Data.Guild !== null">
-                    [<a [routerLink]="['/details/guild', Data.Guild.G_Name]" [innerText]="Data.Guild.G_Name"></a>]
-                </ng-container>
-                <a [routerLink]="['/details/character', Data.Character.Name]"
-                   [class]="'pk-level-' + Data.Character.PkLevel" [innerText]="Data.Character.Name"></a>
-            </td>
-            <td>
-                <img [src]="Data.Character.Image" [alt]="Data.Character.Name" />
-            </td>
-            <td class="center">{{Data.Character.cLevel}} | {{Data.Character.Resets}} | {{Data.Character.GrandResets}}
-            </td>
-            <td class="right">{{Data.OnlineSince}}</td>
-            <td class="right">{{Data.Character.MapNumber | MapName}}</td>
-        </tr>
-    </tbody>
-</table>
+<xweb-loading [show]="loading"></xweb-loading>
+<ng-container *ngIf="!loading">
+    <h1 class="rankings-heading">Online Characters</h1>
+    <table class="rankings characters">
+        <colgroup>
+            <col style="width: 20px;" />
+            <col style="width: 250px;" />
+            <col style="width: 100px;" />
+            <col style="width: 150px;" />
+            <col style="width: 130px;" />
+            <col style="width: 130px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="center">#</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th class="center">
+                    <a href="#/rankings/characters/sort" class="highlight">Lvl</a>
+                    <i class="separator">|</i>
+                    <a href="#/rankings/characters/sort" class="highlight">Res</a>
+                    <i class="separator">|</i>
+                    <a href="#/rankings/characters/sort" class="highlight">GRes</a>
+                </th>
+                <th class="right">Online Since</th>
+                <th class="right">Location</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Data of characters; let index = index">
+                <td class="center">{{index + 1}}</td>
+                <td>
+                    <ng-container *ngIf="Data.Guild !== null">
+                        [<a [routerLink]="['/details/guild', Data.Guild.G_Name]" [innerText]="Data.Guild.G_Name"></a>]
+                    </ng-container>
+                    <a [routerLink]="['/details/character', Data.Character.Name]"
+                       [class]="'pk-level-' + Data.Character.PkLevel" [innerText]="Data.Character.Name"></a>
+                </td>
+                <td>
+                    <img [src]="Data.Character.Class | ClassImage" [alt]="Data.Character.Class | ClassName" />
+                </td>
+                <td class="center">
+                    {{Data.Character.cLevel | PadZeros:3}} |
+                    {{Data.Character.Resets | PadZeros:3}} |
+                    {{Data.Character.GrandResets | PadZeros:3}}
+                </td>
+                <td class="right">{{Data.ConnectTM | OnlineSince}}</td>
+                <td class="right">{{Data.Character.MapNumber | MapName}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

@@ -12,6 +12,9 @@ import { PkStatusPipe } from 'src/pipes/pk-status.pipe';
 import { ClassNamePipe } from 'src/pipes/class-name.pipe';
 import { ClassImagePipe } from 'src/pipes/class-image.pipe';
 import { ClassCharacterImagePipe } from 'src/pipes/class-character-image.pipe';
+import { GuildPositionPipe } from 'src/pipes/guild-position.pipe';
+import { GuildMasterPipe } from 'src/pipes/guild-master.pipe';
+import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
 
 @NgModule({
     declarations: [
@@ -26,7 +29,10 @@ import { ClassCharacterImagePipe } from 'src/pipes/class-character-image.pipe';
         MapNamePipe,
         ClassNamePipe,
         ClassImagePipe,
-        ClassCharacterImagePipe
+        ClassCharacterImagePipe,
+        GuildPositionPipe,
+        GuildMasterPipe,
+        OnlineSincePipe
     ],
     imports: [
         CommonModule
@@ -43,7 +49,10 @@ import { ClassCharacterImagePipe } from 'src/pipes/class-character-image.pipe';
         MapNamePipe,
         ClassNamePipe,
         ClassImagePipe,
-        ClassCharacterImagePipe
+        ClassCharacterImagePipe,
+        GuildPositionPipe,
+        GuildMasterPipe,
+        OnlineSincePipe
     ]
 })
 export class ComponentsModule { }

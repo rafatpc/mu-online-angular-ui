@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CharacterComponent } from './character/character.component'
 import { GuildComponent } from './guild/guild.component';
+import { AuthGuard } from 'src/guards/auth.guard';
 
 const routes: Routes = [
-    { path: 'character/:name', component: CharacterComponent },
-    { path: 'guild/:name', component: GuildComponent }
+    { path: 'character/:name', component: CharacterComponent, canActivate: [AuthGuard] },
+    { path: 'guild/:name', component: GuildComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

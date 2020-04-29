@@ -1,7 +1,10 @@
+import { CharacterData } from './character.types';
+
 export type GuildMember = {
     Name: string;
     G_Name: string;
     G_Level: number;
+    Character?: CharacterData
 };
 
 export type GuildData = {
@@ -13,4 +16,9 @@ export type GuildData = {
     G_Rival: number;
     G_Union: number;
     G_Members: GuildMember[];
-}
+};
+
+export type GuildPosition = {
+    Name: string;
+    Level: number;
+};

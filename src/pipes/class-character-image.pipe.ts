@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { ClassDecode } from '@helpers/character.helpers';
 import { CharacterClass } from '@type/character.types';
 
-// Transforms map number to name
+// Transforms character class to character image src
 @Pipe({ name: 'ClassCharacterImage' })
 export class ClassCharacterImagePipe implements PipeTransform {
     transform(Class: number): string {

@@ -26,7 +26,6 @@ export class GuildComponent implements OnInit {
 
     private getGuildDetails(name: string) {
         return this.guildService.getGuildDetails(name).subscribe((data: GuildData) => {
-            console.log(data);
             this.Guild = data;
             this.loading = false;
         });

@@ -1,0 +1,11 @@
+.toast-container {
+    .ngx-toastr {
+        box-shadow: 0 0 5px transparentize($white, 0.7);
+        margin-bottom: 10px;
+        font-size: 12px;
+
+        .toast-title {
+            font-size: 14px;
+        }
+    }
+}

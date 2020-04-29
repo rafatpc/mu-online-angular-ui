@@ -8,13 +8,15 @@ import { GuildData } from '@type/guild.types';
     templateUrl: './guilds.component.html'
 })
 export class GuildsComponent implements OnInit {
-    guilds: Array<GuildData> = [];
+    guilds: GuildData[] = [];
+    loading: boolean = true;
 
     constructor(private http: HttpClient) { }
 
     ngOnInit() {
         return this.http.get<any>(`${environment.apiUrl}/rankings/guilds`).subscribe((data: GuildData[]) => {
             this.guilds = data;
+            this.loading = false;
         });
     }
 }

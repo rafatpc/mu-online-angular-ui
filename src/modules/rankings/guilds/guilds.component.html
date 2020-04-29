@@ -1,37 +1,40 @@
-<h1 class="rankings-heading">Top Guilds</h1>
-<table class="rankings guilds">
-    <colgroup>
-        <col style="width: 20px;" />
-        <col style="width: 150px;" />
-        <col style="width: 150px;" />
-        <col style="width: 100px;" />
-        <col style="width: 100px;" />
-    </colgroup>
-    <thead>
-        <tr>
-            <th class="center">#</th>
-            <th>Name</th>
-            <th>Leader</th>
-            <th class="right">
-                <a href="#/rankings/characters/sort/members/asc" class="highlight">Members</a>
-            </th>
-            <th class="right">
-                <a href="#/rankings/characters/sort/score/asc" class="highlight">Score</a>
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let Guild of guilds; let index = index">
-            <td class="center">{{index + 1}}</td>
-            <td>
-                <xweb-guild-mark [mark]="Guild.G_Mark"></xweb-guild-mark>
-                <a [routerLink]="['/details/guild', Guild.G_Name]" [innerText]="Guild.G_Name"></a>
-            </td>
-            <td>
-                <a [routerLink]="['/details/character', Guild.G_Master]" [innerText]="Guild.G_Master"></a>
-            </td>
-            <td class="right">{{Guild.G_Members.length}}</td>
-            <td class="right">{{Guild.G_Score}}</td>
-        </tr>
-    </tbody>
-</table>
+<xweb-loading [show]="loading"></xweb-loading>
+<ng-container *ngIf="!loading">
+    <h1 class="rankings-heading">Top Guilds</h1>
+    <table class="rankings guilds">
+        <colgroup>
+            <col style="width: 20px;" />
+            <col style="width: 150px;" />
+            <col style="width: 150px;" />
+            <col style="width: 100px;" />
+            <col style="width: 100px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th class="center">#</th>
+                <th>Name</th>
+                <th>Leader</th>
+                <th class="right">
+                    <a href="#/rankings/characters/sort/members/asc" class="highlight">Members</a>
+                </th>
+                <th class="right">
+                    <a href="#/rankings/characters/sort/score/asc" class="highlight">Score</a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let Guild of guilds; let index = index">
+                <td class="center">{{index + 1}}</td>
+                <td>
+                    <xweb-guild-mark [mark]="Guild.G_Mark"></xweb-guild-mark>
+                    <a [routerLink]="['/details/guild', Guild.G_Name]" [innerText]="Guild.G_Name"></a>
+                </td>
+                <td>
+                    <a [routerLink]="['/details/character', Guild.G_Master]" [innerText]="Guild.G_Master"></a>
+                </td>
+                <td class="right">{{Guild.G_Members.length}}</td>
+                <td class="right">{{Guild.G_Score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>
