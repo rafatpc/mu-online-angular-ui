@@ -6,6 +6,6 @@ import { GuildMember } from '@type/guild.types';
 @Pipe({ name: 'GuildMaster' })
 export class GuildMasterPipe implements PipeTransform {
     transform(Members: GuildMember[]): GuildMember {
-        return Members.filter(Member => Member.G_Level === GuildPositionDecode.GuildMaster.Level)[0];
+        return Members.filter(Member => Member.G_Status === GuildPositionDecode.GuildMaster.Level)[0];
     }
 }

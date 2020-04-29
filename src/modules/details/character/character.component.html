@@ -69,7 +69,8 @@
                     <tr>
                         <td>Status</td>
                         <td class="status">
-                            <xweb-status type="online"></xweb-status> Online
+                            <xweb-status [type]="Character.Online ? 'online' : 'offline'"></xweb-status>
+                            {{Character.Online ? 'Online' : 'Offline'}}
                         </td>
                     </tr>
                 </tbody>

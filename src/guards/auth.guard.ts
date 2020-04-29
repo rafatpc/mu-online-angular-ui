@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     ) { }
 
     canActivate(): boolean {
-        if (this.session.accessToken !== null) {
+        if (this.session.accessToken === null) {
             // Direct access - navigate to the No access page
             if (!this.router.navigated) {
                 this.router.navigate(['/login']);

@@ -15,13 +15,13 @@
                 <tbody>
                     <tr>
                         <td>Score</td>
-                        <td>21</td>
+                        <td>{{Guild.G_Score}}</td>
                     </tr>
                     <tr>
                         <td>Master</td>
                         <td>
                             <ng-template let-GuildMaster
-                                         [ngTemplateOutletContext]="{ $implicit: (Guild.G_Members | GuildMaster).Character.Name }"
+                                         [ngTemplateOutletContext]="{ $implicit: (Guild.G_Members | GuildMaster)?.Character.Name }"
                                          [ngTemplateOutlet]="href" #href>
                                 <a [routerLink]="['/details/character', GuildMaster]" [innerText]="GuildMaster"></a>
                             </ng-template>
@@ -55,7 +55,7 @@
                     <td>
                         <img [src]="Member.Character.Class | ClassImage" [alt]="Member.Character.Class | ClassName" />
                     </td>
-                    <td class="right" [innerHTML]="Member.G_Level | GuildPosition"></td>
+                    <td class="right" [innerHTML]="Member.G_Status | GuildPosition"></td>
                 </tr>
             </tbody>
         </table>

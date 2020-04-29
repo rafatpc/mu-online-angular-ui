@@ -3,7 +3,7 @@ import { CharacterData } from './character.types';
 export type GuildMember = {
     Name: string;
     G_Name: string;
-    G_Level: number;
+    G_Status: number;
     Character?: CharacterData
 };
 
