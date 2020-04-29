@@ -5,8 +5,13 @@ import { ContentBoxComponent } from '@components/content-box/content-box.compone
 import { CheckboxComponent } from '@components/checkbox/checkbox.components';
 import { GuildMarkComponent } from '@components/guild-mark/guild-mark.component';
 import { StatusComponent } from '@components/status/status.component';
-import { PadZerosPipe } from 'src/pipes/pad-zeros.pipe';
 import { LoadingComponent } from '@components/loading/loading.component';
+import { PadZerosPipe } from 'src/pipes/pad-zeros.pipe';
+import { MapNamePipe } from 'src/pipes/map-decode.pipe';
+import { PkStatusPipe } from 'src/pipes/pk-status.pipe';
+import { ClassNamePipe } from 'src/pipes/class-name.pipe';
+import { ClassImagePipe } from 'src/pipes/class-image.pipe';
+import { ClassCharacterImagePipe } from 'src/pipes/class-character-image.pipe';
 
 @NgModule({
     declarations: [
@@ -15,7 +20,13 @@ import { LoadingComponent } from '@components/loading/loading.component';
         GuildMarkComponent,
         StatusComponent,
         LoadingComponent,
-        PadZerosPipe
+        // Pipes
+        PadZerosPipe,
+        PkStatusPipe,
+        MapNamePipe,
+        ClassNamePipe,
+        ClassImagePipe,
+        ClassCharacterImagePipe
     ],
     imports: [
         CommonModule
@@ -26,7 +37,13 @@ import { LoadingComponent } from '@components/loading/loading.component';
         GuildMarkComponent,
         StatusComponent,
         LoadingComponent,
-        PadZerosPipe
+        // Pipes
+        PadZerosPipe,
+        PkStatusPipe,
+        MapNamePipe,
+        ClassNamePipe,
+        ClassImagePipe,
+        ClassCharacterImagePipe
     ]
 })
 export class ComponentsModule { }

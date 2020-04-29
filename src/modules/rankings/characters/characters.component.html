@@ -39,15 +39,15 @@
                    [innerText]="Character.Name"></a>
             </td>
             <td>
-                <img [src]="Character.ClassImage" [alt]="Character.ClassName" />
+                <img [src]="Character.Class | ClassImage" [alt]="Character.Class | ClassName" />
             </td>
             <td class="center">{{Character.Honor}}</td>
             <td class="center">
-                {{Character.cLevel | padZeros:3 }} |
-                {{Character.Resets | padZeros:3 }} |
-                {{Character.GrandResets | padZeros:3 }}
+                {{Character.cLevel | PadZeros:3 }} |
+                {{Character.Resets | PadZeros:3 }} |
+                {{Character.GrandResets | PadZeros:3 }}
             </td>
-            <td class="right">{{Character.Map}}</td>
+            <td class="right">{{Character.MapNumber | MapName}}</td>
         </tr>
     </tbody>
 </table>

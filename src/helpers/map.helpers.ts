@@ -81,4 +81,5 @@ export abstract class MapDecode {
     static readonly 105: MapName = 'Tormented';
     static readonly 106: MapName = 'Tormented';
     static readonly 110: MapName = 'Nars';
+    static readonly Undefined: MapName = 'Undefined';
 }

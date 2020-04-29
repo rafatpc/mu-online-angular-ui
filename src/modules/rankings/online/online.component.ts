@@ -34,7 +34,7 @@ export class OnlineComponent implements OnInit {
     private transformCharacterData(Data: OnlineCharacter) {
         const Character: Partial<CharacterData> = Data.Character;
         const ClassData: CharacterClass = ClassDecode[Character.Class] || ClassDecode.Undefined;
-        const padZeros = value => String(value).padStart(3, '0');
+        const PadZeros = value => String(value).padStart(3, '0');
 
         const CurrentTime: number = (new Date()).getTime();
         const ConnectedTime: number = (new Date(Data.ConnectTM)).getTime();
@@ -49,9 +49,9 @@ export class OnlineComponent implements OnInit {
                 ...ClassData,
                 PkName: PkStatusDecode[Character.PkLevel],
                 Map: MapDecode[Character.MapNumber],
-                cLevel: padZeros(Character.cLevel),
-                Resets: padZeros(Character.Resets),
-                GrandResets: padZeros(Character.GrandResets)
+                cLevel: PadZeros(Character.cLevel),
+                Resets: PadZeros(Character.Resets),
+                GrandResets: PadZeros(Character.GrandResets)
             }
         }
     }

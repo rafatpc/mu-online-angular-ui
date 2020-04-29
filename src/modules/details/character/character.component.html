@@ -4,7 +4,8 @@
         <div class="character">
             <h1>{{Character.Name}}</h1>
             <div class="img-wrapper">
-                <img class="no-drag" [src]="Character.ClassCharacterImage" [alt]="Character.ClassName" />
+                <img class="no-drag" [src]="Character.Class | ClassCharacterImage"
+                     [alt]="Character.Class | ClassName" />
             </div>
         </div>
         <div class="statistics">
@@ -45,20 +46,20 @@
                     </tr>
                     <tr>
                         <td>Class</td>
-                        <td>{{Character.ClassName}}</td>
+                        <td>{{Character.Class | ClassName}}</td>
                     </tr>
                     <tr>
                         <td>PK Level</td>
                         <td>
                             <span [class]="'pk-level-' + Character.PkLevel">
-                                {{Character.PkName}} ({{Character.PkCount}})
+                                {{Character.PkLevel | PkStatusName}} ({{Character.PkCount}})
                             </span>
                         </td>
                     </tr>
                     <tr>
                         <td>Location</td>
                         <td>
-                            {{Character.Map}}
+                            {{Character.MapNumber | MapName}}
                             <span class="separator">
                                 {{Character.MapPosX}}
                                 {{Character.MapPosY}}

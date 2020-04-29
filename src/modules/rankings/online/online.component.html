@@ -35,12 +35,12 @@
                    [class]="'pk-level-' + Data.Character.PkLevel" [innerText]="Data.Character.Name"></a>
             </td>
             <td>
-                <img [src]="Data.Character.ClassImage" [alt]="Data.Character.ClassName" />
+                <img [src]="Data.Character.Image" [alt]="Data.Character.Name" />
             </td>
             <td class="center">{{Data.Character.cLevel}} | {{Data.Character.Resets}} | {{Data.Character.GrandResets}}
             </td>
             <td class="right">{{Data.OnlineSince}}</td>
-            <td class="right">{{Data.Character.Map}}</td>
+            <td class="right">{{Data.Character.MapNumber | MapName}}</td>
         </tr>
     </tbody>
 </table>

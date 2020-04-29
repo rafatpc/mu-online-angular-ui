@@ -5,9 +5,9 @@ export type MapName = string;
 export type PkStatusName = string;
 
 export type CharacterClass = {
-    ClassName: string;
-    ClassImage: string;
-    ClassCharacterImage: string;
+    Name: string;
+    Image: string;
+    CharacterImage: string;
 };
 
 export type MasterSkillTree = {
@@ -22,20 +22,15 @@ export type CharacterData = {
     Master: MasterSkillTree;
     Online: boolean;
     Class: number;
-    ClassName: string;
-    ClassImage: string;
-    ClassCharacterImage: string;
     Honor: number;
     cLevel: number | string;
     Resets: number | string;
     GrandResets: number | string;
-    Map: MapName;
     MapNumber: number;
     MapPosX: number;
     MapPosY: number;
     PkLevel: number;
     PkCount: number;
-    PkName: PkStatusName;
 };
 
 export type OnlineCharacter = {
