@@ -15,6 +15,7 @@ import { ClassCharacterImagePipe } from 'src/pipes/class-character-image.pipe';
 import { GuildPositionPipe } from 'src/pipes/guild-position.pipe';
 import { GuildMasterPipe } from 'src/pipes/guild-master.pipe';
 import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
+import { IsOnlinePipe } from 'src/pipes/is-online.pipe';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
         ClassCharacterImagePipe,
         GuildPositionPipe,
         GuildMasterPipe,
-        OnlineSincePipe
+        OnlineSincePipe,
+        IsOnlinePipe
     ],
     imports: [
         CommonModule
@@ -52,7 +54,8 @@ import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
         ClassCharacterImagePipe,
         GuildPositionPipe,
         GuildMasterPipe,
-        OnlineSincePipe
+        OnlineSincePipe,
+        IsOnlinePipe
     ]
 })
 export class ComponentsModule { }

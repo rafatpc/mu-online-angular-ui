@@ -48,7 +48,7 @@
             <tbody>
                 <tr *ngFor="let Member of Guild.G_Members;">
                     <td>
-                        <xweb-status type="online"></xweb-status>
+                        <xweb-status [type]="Member.Character | IsOnline"></xweb-status>
                         <a [routerLink]="['/details/character', Member.Character.Name]"
                            [innerText]="Member.Character.Name"></a>
                     </td>

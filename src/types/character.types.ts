@@ -13,8 +13,8 @@ export type CharacterClass = {
 
 export type MasterSkillTree = {
     Name: string;
-    MasterLevel: number;
-    MasterPoint: number;
+    Level: number;
+    Points: number;
 }
 
 export type CharacterData = {

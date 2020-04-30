@@ -32,7 +32,7 @@
             <tr *ngFor="let Character of characters; let index = index">
                 <td class="center">{{index + 1}}</td>
                 <td>
-                    <xweb-status [type]="Character.Online ? 'online' : 'offline'"></xweb-status>
+                    <xweb-status [type]="Character | IsOnline"></xweb-status>
                     <ng-container *ngIf="Character.Guild !== null">
                         [<a [routerLink]="['/details/guild', Character.Guild.G_Name]"
                            [innerText]="Character.Guild.G_Name"></a>]

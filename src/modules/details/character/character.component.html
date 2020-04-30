@@ -21,7 +21,7 @@
                     <tr>
                         <td>Master Level</td>
                         <td>
-                            {{Character.Master?.MasterLevel || 0}}
+                            {{Character.Master?.Level || 0}}
                         </td>
                     </tr>
                     <tr>
@@ -69,8 +69,8 @@
                     <tr>
                         <td>Status</td>
                         <td class="status">
-                            <xweb-status [type]="Character.Online ? 'online' : 'offline'"></xweb-status>
-                            {{Character.Online ? 'Online' : 'Offline'}}
+                            <xweb-status [type]="Character | IsOnline"></xweb-status>
+                            {{Character | IsOnline:true}}
                         </td>
                     </tr>
                 </tbody>
