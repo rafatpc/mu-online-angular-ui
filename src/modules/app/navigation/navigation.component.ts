@@ -9,6 +9,7 @@ export class NavigationComponent {
 
     routes: Array<MenuItem> = [
         { route: '/', title: 'Home' },
+        { route: '/register', title: 'Register' },
         { route: '/downloads', title: 'Downloads' },
         {
             route: '/rankings', title: 'Rankings', children: [

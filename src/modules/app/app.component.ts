@@ -10,6 +10,4 @@ import { Component } from '@angular/core';
         <xweb-footer></xweb-footer>
     `
 })
-export class AppComponent {
-    title = 'SimpleAsThat';
-}
+export class AppComponent { }

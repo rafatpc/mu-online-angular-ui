@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,12 +34,13 @@ import { ComponentsModule } from '../shared/components.module';
         FooterComponent
     ],
     imports: [
-        BrowserModule,
-        ComponentsModule,
         FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        BrowserAnimationsModule,
+        ComponentsModule,
         HttpClientModule,
         AppRoutingModule,
-        BrowserAnimationsModule,
         ToastrModule.forRoot({
             timeOut: 2500,
             extendedTimeOut: 1000,
