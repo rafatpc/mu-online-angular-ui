@@ -10,14 +10,22 @@ import { CharacterPanelComponent } from '../character-panel/character-panel.comp
 import { ResetComponent } from '../character-panel/reset/reset.component';
 import { GrandResetComponent } from '../character-panel/grand-reset/grand-reset.component';
 import { OverviewComponent } from '../character-panel/overview/overview.component';
+import { AddStatsComponent } from '../character-panel/add-stats/add-stats.component';
+import { SwapStatsComponent } from '../character-panel/swap-stats/swap-stats.component';
+import { ClearPkComponent } from '../character-panel/clear-pk/clear-pk.component';
+import { ClearInventoryComponent } from '../character-panel/clear-inventory/clear-inventory.component';
 
 @NgModule({
     declarations: [
         CharactersComponent,
         CharacterPanelComponent,
+        OverviewComponent,
         ResetComponent,
         GrandResetComponent,
-        OverviewComponent
+        AddStatsComponent,
+        SwapStatsComponent,
+        ClearPkComponent,
+        ClearInventoryComponent
     ],
     imports: [
         CommonModule,

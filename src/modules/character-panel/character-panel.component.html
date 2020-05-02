@@ -7,6 +7,12 @@
                 <img [src]="Character.Class | ClassCharacterImage" [alt]="Character.Class | ClassName"
                      class="no-drag" />
             </div>
+            <div class="quick-actions">
+                <a [routerLink]="[{ outlets: { 'character-panel': [''] } }]" class="highlight">
+                    <i class="fas fa-stream"></i>
+                    Overview
+                </a>
+            </div>
             <span class="separator">
                 Quick Actions
             </span>
