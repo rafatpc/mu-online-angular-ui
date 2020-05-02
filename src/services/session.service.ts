@@ -12,7 +12,7 @@ export class SessionService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 
-    private tokenSubject: BehaviorSubject<string>;
+    private tokenSubject: BehaviorSubject<JwtToken>;
     public token: Observable<JwtToken>;
 
     constructor() {

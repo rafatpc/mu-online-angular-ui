@@ -1,0 +1,15 @@
+<section class="characters">
+    <h1 class="highlight">select character</h1>
+    <div class="wrapper">
+        <div class="character" *ngFor="let Character of characters">
+            <a [routerLink]="['/account/character', Character.Name]">
+                <h2>{{Character.Name}}</h2>
+                <div class="img-wrapper">
+                    <img [src]="Character.Class | ClassCharacterImage" [alt]="Character.Class | ClassName"
+                         class="no-drag" />
+                </div>
+            </a>
+        </div>
+    </div>
+    <div *ngIf="characters?.length === 0 || !characters" class="text-center">no characters</div>
+</section>

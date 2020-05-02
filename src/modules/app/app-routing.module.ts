@@ -9,6 +9,7 @@ const routes: Routes = [
     { path: 'rankings', loadChildren: () => import('../rankings/rankings.module').then(m => m.RankingsModule) },
     { path: 'details', loadChildren: () => import('../details/details.module').then(m => m.DetailsModule) },
     { path: 'register', loadChildren: () => import('../register/register.module').then(m => m.RegisterModule) },
+    { path: 'account', loadChildren: () => import('../account/account.module').then(m => m.AccountModule) },
     { path: 'login', component: NotAuthenticatedComponent },
     { path: '**', component: NotFoundComponent }
 ];

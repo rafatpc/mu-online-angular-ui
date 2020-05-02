@@ -1,0 +1,55 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { AccountService } from '@services/account.service';
+import { CharacterData } from '@type/character.types';
+
+@Component({
+    templateUrl: './character-panel.component.html'
+})
+export class CharacterPanelComponent implements OnInit {
+    Character: CharacterData = {} as any;
+    loading: boolean = true;
+
+    navigation = [
+        { path: '', name: 'Overview', icon: 'fas fa-info-circle' },
+        { quick: 1, path: 'reset', name: 'Reset', icon: 'fas fa-sync-alt' },
+        { quick: 2, path: 'grand-reset', name: 'Grand Reset', icon: 'fas fa-sync-alt' },
+        { path: 'add-stats', name: 'Add Stats', icon: 'fas fa-plus' },
+        { path: 'dual-stats', name: 'Dual Stats', icon: 'fas fa-exchange-alt' },
+        { quick: 3, path: 'swap-stats', name: 'Swap Stats', icon: 'fas fa-exchange-alt' },
+        { quick: 4, path: 'cleap-pk', name: 'Clear PK', icon: 'fas fa-sync-alt' },
+        { path: 'cleap-inventory', name: 'Clear Inventory', icon: 'fas fa-sync-alt' },
+    ];
+
+    quick = [];
+
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private account: AccountService
+    ) { }
+
+    ngOnInit() {
+        return this.route.params.subscribe((params: { name: string }) => {
+            this.getCharacterDetails(params.name);
+
+            this.quick = this.navigation
+                .filter(route => route.quick > 0)
+                .sort((a, b) => a > b ? -1 : 1);
+        });
+    }
+
+    private getCharacterDetails(name: string) {
+        return this.account.getCharacter(name).subscribe((data: CharacterData) => {
+            this.Character = data;
+            this.loading = false;
+
+            this.router.navigate([{
+                outlets: {
+                    'character-panel': ['reset']
+                }
+            }]);
+        });
+    }
+}

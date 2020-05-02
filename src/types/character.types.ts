@@ -43,3 +43,9 @@ export type OnlineCharacter = {
     Guild: Partial<GuildMember>;
     Character: Partial<CharacterData>;
 };
+
+export type AccountCharacters = {
+    Id: string;
+    GameIDC: string;
+    Characters: Partial<CharacterData>[];
+};

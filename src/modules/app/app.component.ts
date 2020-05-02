@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'app-root',
+    selector: 'xweb',
     template: `
         <xweb-top-bar></xweb-top-bar>
         <xweb-header></xweb-header>

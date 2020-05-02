@@ -1,0 +1,39 @@
+<xweb-loading [show]="loading"></xweb-loading>
+<ng-container *ngIf="!loading">
+    <section class="character-panel">
+        <div class="character">
+            <h1 id="character-name">{{Character.Name}}</h1>
+            <div class="img-wrapper">
+                <img [src]="Character.Class | ClassCharacterImage" [alt]="Character.Class | ClassName"
+                     class="no-drag" />
+            </div>
+            <span class="separator">
+                Quick Actions
+            </span>
+            <div class="quick-actions">
+                <ng-container *ngFor="let route of quick">
+                    <a [routerLink]="route.path" class="highlight">
+                        <i [class]="route.icon"></i>
+                        {{route.name}}
+                    </a>
+                    <br />
+                </ng-container>
+            </div>
+        </div>
+        <div class="options">
+            <section id="character-panel-tabs" class="tabs">
+                <div class="pills">
+                    <ng-container *ngFor="let route of navigation">
+                        <a [routerLink]="[{ outlets: { 'character-panel': [route.path] } }]"
+                           [routerLinkActiveOptions]="{exact: true}" routerLinkActive="selected" class="button gray">
+                            {{route.name}}
+                        </a>
+                    </ng-container>
+                </div>
+                <div class="content">
+                    <router-outlet name="character-panel"></router-outlet>
+                </div>
+            </section>
+        </div>
+    </section>
+</ng-container>
