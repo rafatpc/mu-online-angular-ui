@@ -1,4 +1,5 @@
 import { GuildMember } from './guild.types';
+import { DecodedItem } from './items.types';
 
 export type MapName = string;
 
@@ -15,7 +16,7 @@ export type MasterSkillTree = {
     Name: string;
     Level: number;
     Points: number;
-}
+};
 
 export type CharacterData = {
     Name: string;
@@ -37,6 +38,7 @@ export type CharacterData = {
     Vitality: number;
     Energy: number;
     Leadership: number;
+    Inventory: DecodedInventory;
 };
 
 export type OnlineCharacter = {
@@ -53,4 +55,9 @@ export type AccountCharacters = {
     Id: string;
     GameIDC: string;
     Characters: Partial<CharacterData>[];
+};
+
+export type DecodedInventory = {
+    Equipped: DecodedItem[];
+    Storage: DecodedItem[];
 };

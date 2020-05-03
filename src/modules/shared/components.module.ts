@@ -17,6 +17,7 @@ import { GuildMasterPipe } from 'src/pipes/guild-master.pipe';
 import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
 import { IsOnlinePipe } from 'src/pipes/is-online.pipe';
 import { NumberFormatPipe } from 'src/pipes/number-format.pipe';
+import { ItemImagePipe } from 'src/pipes/item-image.pipe';
 
 const Modules = [
     CheckboxComponent,
@@ -35,7 +36,8 @@ const Modules = [
     GuildMasterPipe,
     OnlineSincePipe,
     IsOnlinePipe,
-    NumberFormatPipe
+    NumberFormatPipe,
+    ItemImagePipe
 ];
 
 @NgModule({
