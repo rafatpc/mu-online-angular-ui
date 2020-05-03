@@ -2,9 +2,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { DecodedItem } from '@type/items.types';
 import { ItemsService } from '@services/items.service';
 
-// Get Item image from Item object
-@Pipe({ name: 'ItemImage' })
-export class ItemImagePipe implements PipeTransform {
+// Get Item name from Item object
+@Pipe({ name: 'ItemName' })
+export class ItemNamePipe implements PipeTransform {
     constructor(
         private itemsService: ItemsService
     ) { }
@@ -13,15 +13,12 @@ export class ItemImagePipe implements PipeTransform {
         const { group, id, level, ancient } = Item;
         const item = this.itemsService.find(group, id);
 
-        const type = 0; // Legacy
-        const levelItem = item.length > 1 ? level : 0;
+        if (item.length > 1) {
+            const found = item.filter(Item => Item.Level === level)[0];
+            return found?.Name;
+        }
 
-        // Item image: <<Item type>><<Group>><<Id>><<Level>>.png
-        const image = [type, group, id, levelItem]
-            .map(this.encodeSegment)
-            .join('');
-
-        return `/assets/items/${image}.png`;
+        return item[0].Name;
     }
 
     private encodeSegment(value: number) {

@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
 
@@ -21,6 +21,7 @@ import { SessionService } from '@services/session.service';
 
 import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
 import { ComponentsModule } from '../shared/components.module';
+import { ItemsService, itemsProviderFactory } from '@services/items.service';
 
 @NgModule({
     declarations: [
@@ -50,8 +51,10 @@ import { ComponentsModule } from '../shared/components.module';
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: APP_INITIALIZER, useFactory: itemsProviderFactory, deps: [ItemsService], multi: true },
         AuthenticationService,
-        SessionService
+        SessionService,
+        ItemsService
     ],
     bootstrap: [AppComponent],
     exports: []

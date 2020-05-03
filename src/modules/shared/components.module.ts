@@ -18,6 +18,7 @@ import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
 import { IsOnlinePipe } from 'src/pipes/is-online.pipe';
 import { NumberFormatPipe } from 'src/pipes/number-format.pipe';
 import { ItemImagePipe } from 'src/pipes/item-image.pipe';
+import { ItemNamePipe } from 'src/pipes/item-name.pipe';
 
 const Modules = [
     CheckboxComponent,
@@ -37,7 +38,8 @@ const Modules = [
     OnlineSincePipe,
     IsOnlinePipe,
     NumberFormatPipe,
-    ItemImagePipe
+    ItemImagePipe,
+    ItemNamePipe
 ];
 
 @NgModule({
