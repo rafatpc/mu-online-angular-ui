@@ -32,6 +32,11 @@ export type CharacterData = {
     MapPosY: number;
     PkLevel: number;
     PkCount: number;
+    Strength: number;
+    Dexterity: number;
+    Vitality: number;
+    Energy: number;
+    Leadership: number;
 };
 
 export type OnlineCharacter = {

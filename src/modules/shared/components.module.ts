@@ -16,46 +16,33 @@ import { GuildPositionPipe } from 'src/pipes/guild-position.pipe';
 import { GuildMasterPipe } from 'src/pipes/guild-master.pipe';
 import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
 import { IsOnlinePipe } from 'src/pipes/is-online.pipe';
+import { NumberFormatPipe } from 'src/pipes/number-format.pipe';
+
+const Modules = [
+    CheckboxComponent,
+    ContentBoxComponent,
+    GuildMarkComponent,
+    StatusComponent,
+    LoadingComponent,
+    // Pipes
+    PadZerosPipe,
+    PkStatusPipe,
+    MapNamePipe,
+    ClassNamePipe,
+    ClassImagePipe,
+    ClassCharacterImagePipe,
+    GuildPositionPipe,
+    GuildMasterPipe,
+    OnlineSincePipe,
+    IsOnlinePipe,
+    NumberFormatPipe
+];
 
 @NgModule({
-    declarations: [
-        CheckboxComponent,
-        ContentBoxComponent,
-        GuildMarkComponent,
-        StatusComponent,
-        LoadingComponent,
-        // Pipes
-        PadZerosPipe,
-        PkStatusPipe,
-        MapNamePipe,
-        ClassNamePipe,
-        ClassImagePipe,
-        ClassCharacterImagePipe,
-        GuildPositionPipe,
-        GuildMasterPipe,
-        OnlineSincePipe,
-        IsOnlinePipe
-    ],
+    declarations: Modules,
     imports: [
         CommonModule
     ],
-    exports: [
-        CheckboxComponent,
-        ContentBoxComponent,
-        GuildMarkComponent,
-        StatusComponent,
-        LoadingComponent,
-        // Pipes
-        PadZerosPipe,
-        PkStatusPipe,
-        MapNamePipe,
-        ClassNamePipe,
-        ClassImagePipe,
-        ClassCharacterImagePipe,
-        GuildPositionPipe,
-        GuildMasterPipe,
-        OnlineSincePipe,
-        IsOnlinePipe
-    ]
+    exports: Modules
 })
 export class ComponentsModule { }

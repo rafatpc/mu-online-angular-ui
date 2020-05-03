@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { AccountService } from '@services/account.service';
 import { CharacterData } from '@type/character.types';
@@ -24,7 +24,6 @@ export class CharacterPanelComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router,
         private account: AccountService
     ) { }
 
