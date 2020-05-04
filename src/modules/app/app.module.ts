@@ -21,7 +21,7 @@ import { SessionService } from '@services/session.service';
 
 import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
 import { ComponentsModule } from '../shared/components.module';
-import { ItemsService, itemsProviderFactory } from '@services/items.service';
+import { ItemsService, itemsProviderFactory } from '../items/items.service';
 
 @NgModule({
     declarations: [

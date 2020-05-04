@@ -17,8 +17,11 @@ import { GuildMasterPipe } from 'src/pipes/guild-master.pipe';
 import { OnlineSincePipe } from 'src/pipes/online-since.pipe';
 import { IsOnlinePipe } from 'src/pipes/is-online.pipe';
 import { NumberFormatPipe } from 'src/pipes/number-format.pipe';
-import { ItemImagePipe } from 'src/pipes/item-image.pipe';
-import { ItemNamePipe } from 'src/pipes/item-name.pipe';
+import { ItemImagePipe } from '../items/item-image.pipe';
+import { ItemNamePipe } from '../items/item-name.pipe';
+import { ItemInfoComponent } from '../items/item-info/item-info.component';
+import { ItemExcellentOptionPipe } from '../items/item-excellent-option.pipe';
+import { ItemTypeClassPipe } from '../items/item-type-class.pipe';
 
 const Modules = [
     CheckboxComponent,
@@ -26,6 +29,7 @@ const Modules = [
     GuildMarkComponent,
     StatusComponent,
     LoadingComponent,
+    ItemInfoComponent,
     // Pipes
     PadZerosPipe,
     PkStatusPipe,
@@ -39,7 +43,9 @@ const Modules = [
     IsOnlinePipe,
     NumberFormatPipe,
     ItemImagePipe,
-    ItemNamePipe
+    ItemNamePipe,
+    ItemExcellentOptionPipe,
+    ItemTypeClassPipe
 ];
 
 @NgModule({

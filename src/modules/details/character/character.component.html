@@ -82,9 +82,7 @@
             <strong>Equipped Items</strong>
         </div>
         <div class="items-row">
-            <div class="item" *ngFor="let Item of Character?.Inventory.Equipped" [ngClass]="{'wings': Item.slot === 7}">
-                <img [src]="Item | ItemImage" [alt]="Item | ItemName" [ngClass]="{'ancient': Item.ancient > 0}" />
-            </div>
+            <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"></xweb-item-info>
         </div>
     </section>
 </ng-container>
