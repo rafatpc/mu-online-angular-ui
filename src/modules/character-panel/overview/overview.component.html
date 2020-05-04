@@ -97,7 +97,8 @@
                 <strong>Equipped Items</strong>
             </div>
             <div class="items-row">
-                <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"></xweb-item-info>
+                <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"
+                                tooltip-location="left"></xweb-item-info>
             </div>
         </section>
     </section>

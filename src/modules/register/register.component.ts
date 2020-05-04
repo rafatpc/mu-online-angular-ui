@@ -1,5 +1,4 @@
 import { Component, AfterViewInit, ViewChild, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -31,7 +30,8 @@ export class RegisterComponent implements AfterViewInit {
         Validators.email
     ]);
 
-    matcher = new ErrorStateMatcher();
+    // TODO: Fix that
+    // matcher = new ErrorStateMatcher();
 
     @ViewChild('usernameInput') usernameInput: ElementRef;
 
