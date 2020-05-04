@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
-import { environment } from '../../../environments/environment';
-import { GuildData } from 'src/modules/guild/guild.types';
+import { GuildData } from '../../guild/guild.types';
+import { GuildService } from 'src/modules/guild/guild.service';
 
 @Component({
     templateUrl: './guilds.component.html'
@@ -11,10 +10,12 @@ export class GuildsComponent implements OnInit {
     guilds: GuildData[] = [];
     loading: boolean = true;
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private guildService: GuildService
+    ) { }
 
     ngOnInit() {
-        return this.http.get<any>(`${environment.apiUrl}/rankings/guilds`).subscribe((data: GuildData[]) => {
+        return this.guildService.getGuildRankings().subscribe((data: GuildData[]) => {
             this.guilds = data;
             this.loading = false;
         });

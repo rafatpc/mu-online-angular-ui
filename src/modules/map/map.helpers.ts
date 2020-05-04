@@ -1,4 +1,4 @@
-import { MapName } from 'src/modules/character/character.types';
+import { MapName } from '../character/character.types';
 
 export abstract class MapDecode {
     static readonly 0: MapName = 'Lorencia';

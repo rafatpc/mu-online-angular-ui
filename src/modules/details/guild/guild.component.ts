@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { GuildData } from 'src/modules/guild/guild.types';
 import { ActivatedRoute } from '@angular/router';
-import { GuildService } from 'src/modules/guild/guild.service';
+
+import { GuildData } from '../../guild/guild.types';
+import { GuildService } from '../../guild/guild.service';
 
 @Component({
     templateUrl: './guild.component.html'

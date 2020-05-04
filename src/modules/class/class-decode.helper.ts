@@ -1,4 +1,4 @@
-import { CharacterClass } from 'src/modules/character/character.types';
+import { CharacterClass } from '../character/character.types';
 
 export abstract class ClassDecode {
     // Dark Wizard

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { OnlineCharacter } from 'src/modules/character/character.types';
-import { CharacterService } from 'src/modules/character/character.service';
+import { OnlineCharacter } from '../../character/character.types';
+import { CharacterService } from '../../character/character.service';
 
 @Component({
     templateUrl: './online.component.html'

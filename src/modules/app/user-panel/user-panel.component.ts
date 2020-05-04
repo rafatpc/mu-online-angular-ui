@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthenticationService } from 'src/modules/auth/auth.service';
-import { SessionService } from 'src/modules/auth/session.service';
+import { AuthenticationService } from '../../auth/auth.service';
+import { SessionService } from '../../auth/session.service';
 
 @Component({
     selector: 'xweb-user-panel',

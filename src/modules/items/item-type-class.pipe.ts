@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DecodedItem, SocketOption } from 'src/modules/items/items.types';
+import { DecodedItem, SocketOption } from './items.types';
 
 // Get Item image from Item object
 @Pipe({ name: 'ItemTypeClass' })

@@ -1,5 +1,5 @@
 import { Component, Input, HostBinding, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { DecodedItem, ItemConfig } from 'src/modules/items/items.types';
+import { DecodedItem, ItemConfig } from '../items.types';
 import { ItemsService } from '../items.service';
 
 @Component({

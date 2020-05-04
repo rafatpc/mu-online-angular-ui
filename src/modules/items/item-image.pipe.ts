@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DecodedItem } from 'src/modules/items/items.types';
+import { DecodedItem } from './items.types';
 import { ItemsService } from './items.service';
 
 // Get Item image from Item object

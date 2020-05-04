@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DecodedItem, ItemConfig } from 'src/modules/items/items.types';
+import { DecodedItem, ItemConfig } from './items.types';
 import { ItemsService } from './items.service';
 
 // Get Item name from Item object

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform, Input } from '@angular/core';
-import { DecodedItem } from 'src/modules/items/items.types';
+import { DecodedItem } from './items.types';
 import { ItemsService } from './items.service';
 import { ExcellentOptionsMap } from './excellent-options.data';
 

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { ItemConfig, ItemConfigMap } from 'src/modules/items/items.types';
-import { map } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
+import { ItemConfig, ItemConfigMap } from './items.types';
 
 @Injectable({ providedIn: 'root' })
 export class ItemsService {

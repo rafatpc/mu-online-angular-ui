@@ -16,8 +16,8 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { AuthenticationService } from 'src/modules/auth/auth.service';
-import { SessionService } from 'src/modules/auth/session.service';
+import { AuthenticationService } from '../auth/auth.service';
+import { SessionService } from '../auth/session.service';
 
 import { AuthInterceptor } from '../auth/auth.interceptor';
 import { ComponentsModule } from '../shared/components.module';

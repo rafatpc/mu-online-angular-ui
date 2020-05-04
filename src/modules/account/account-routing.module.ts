@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CharactersComponent } from './characters/characters.component'
 import { CharacterPanelComponent } from '../character-panel/character-panel.component';
 import { CharacterPanelRoutes } from '../character-panel/character-panel-routing.module';
-import { AuthGuard } from 'src/modules/auth/auth.guard';
+import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
     { path: '', redirectTo: 'characters', canActivate: [AuthGuard] },

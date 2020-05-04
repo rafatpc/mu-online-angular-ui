@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CharacterService } from 'src/modules/character/character.service';
+import { CharacterService } from '../character/character.service';
+import { GuildService } from '../guild/guild.service';
 
 import { RankingsRoutingModule } from './rankings-routing.module';
 import { CharactersComponent } from './characters/characters.component';
@@ -21,7 +22,8 @@ import { ComponentsModule } from '../shared/components.module';
         RankingsRoutingModule
     ],
     providers: [
-        CharacterService
+        CharacterService,
+        GuildService
     ]
 })
 export class RankingsModule { }
