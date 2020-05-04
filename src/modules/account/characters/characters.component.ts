@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AccountService } from '@services/account.service';
-import { CharacterData } from '@type/character.types';
+import { CharacterData } from 'src/modules/character/character.types';
 
 @Component({
     templateUrl: './characters.component.html'

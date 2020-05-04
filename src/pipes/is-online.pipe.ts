@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { CharacterData } from '@type/character.types';
+import { CharacterData } from 'src/modules/character/character.types';
 
 // Transforms Character's Online attribute to either xweb-status type or label (Online/Offline)
 @Pipe({ name: 'IsOnline' })

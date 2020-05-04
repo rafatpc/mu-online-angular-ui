@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { MapDecode } from '@helpers/map.helpers';
-import { MapName } from '@type/character.types';
+import { MapName } from 'src/modules/character/character.types';
 
 // Transforms map number to name
 @Pipe({ name: 'MapName' })

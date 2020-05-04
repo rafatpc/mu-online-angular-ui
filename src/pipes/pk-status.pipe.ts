@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { PkStatusDecode } from '@helpers/character.helpers';
-import { PkStatusName } from '@type/character.types';
+import { PkStatusName } from 'src/modules/character/character.types';
 
 // Transforms PK level to PK status name
 @Pipe({ name: 'PkStatusName' })

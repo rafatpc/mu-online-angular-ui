@@ -1,4 +1,4 @@
-import { CharacterData } from './character.types';
+import { CharacterData } from '../modules/character/character.types';
 
 export type GuildMember = {
     Name: string;

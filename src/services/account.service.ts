@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { environment } from '../environments/environment';
-import { AccountCharacters, CharacterData } from '@type/character.types';
+import { AccountCharacters, CharacterData } from 'src/modules/character/character.types';
 
 @Injectable({ providedIn: 'root' })
 export class AccountService {

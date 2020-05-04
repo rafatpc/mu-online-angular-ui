@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { CharacterData } from '@type/character.types';
+import { CharacterData } from 'src/modules/character/character.types';
 import { CharacterService } from '@services/character.service';
 
 @Component({

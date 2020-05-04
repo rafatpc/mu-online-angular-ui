@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
 import { AccountService } from '@services/account.service';
-import { CharacterData } from '@type/character.types';
-import { DecodedItem } from '@type/items.types';
+import { CharacterData } from 'src/modules/character/character.types';
+import { DecodedItem } from 'src/modules/items/items.types';
 
 @Component({
     templateUrl: './overview.component.html'
