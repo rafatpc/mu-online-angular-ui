@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-import { User } from '@type/user.types';
-import { JwtToken } from '@type/auth.types';
+import { User } from 'src/modules/auth/auth.types';
+import { JwtToken } from 'src/modules/auth/auth.types';
 
 @Injectable({ providedIn: 'root' })
 export class SessionService {

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-import { environment } from '../environments/environment';
+import { environment } from '../../environments/environment';
 import { CharacterData, OnlineCharacter } from 'src/modules/character/character.types';
 
 @Injectable({ providedIn: 'root' })

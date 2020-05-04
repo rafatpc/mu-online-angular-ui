@@ -16,10 +16,10 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
-import { AuthenticationService } from '@services/authentication.service';
-import { SessionService } from '@services/session.service';
+import { AuthenticationService } from 'src/modules/auth/auth.service';
+import { SessionService } from 'src/modules/auth/session.service';
 
-import { JwtInterceptor } from '../../interceptors/jwt.interceptor';
+import { AuthInterceptor } from '../auth/auth.interceptor';
 import { ComponentsModule } from '../shared/components.module';
 import { ItemsService, itemsProviderFactory } from '../items/items.service';
 
@@ -50,7 +50,7 @@ import { ItemsService, itemsProviderFactory } from '../items/items.service';
         })
     ],
     providers: [
-        { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         { provide: APP_INITIALIZER, useFactory: itemsProviderFactory, deps: [ItemsService], multi: true },
         AuthenticationService,
         SessionService,

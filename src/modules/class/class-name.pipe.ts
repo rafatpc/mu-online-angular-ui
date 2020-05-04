@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { ClassDecode } from '@helpers/character.helpers';
+import { ClassDecode } from 'src/modules/character/character.helpers';
 import { CharacterClass } from 'src/modules/character/character.types';
 
 // Transforms character class to image src

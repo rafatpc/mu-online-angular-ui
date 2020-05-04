@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { MapDecode } from '@helpers/map.helpers';
+import { MapDecode } from './map.helpers';
 import { MapName } from 'src/modules/character/character.types';
 
 // Transforms map number to name

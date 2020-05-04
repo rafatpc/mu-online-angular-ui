@@ -1,4 +1,4 @@
-import { GuildMember } from '../../types/guild.types';
+import { GuildMember } from '../guild/guild.types';
 import { DecodedItem } from '../items/items.types';
 
 export type MapName = string;

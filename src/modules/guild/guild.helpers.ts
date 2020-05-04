@@ -1,4 +1,4 @@
-import { GuildPosition } from '@type/guild.types';
+import { GuildPosition } from 'src/modules/guild/guild.types';
 
 export abstract class GuildPositionDecode {
     static readonly GuildMaster: GuildPosition = {

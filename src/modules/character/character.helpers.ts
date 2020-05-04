@@ -1,6 +1,6 @@
-import { PkStatusName } from '../types/character.types';
+import { PkStatusName } from './character.types';
 
-export * from './class-decode.helper';
+export * from '../class/class-decode.helper';
 
 export abstract class PkStatusDecode {
     static readonly 1: PkStatusName = 'Hero';

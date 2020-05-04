@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CharacterService } from '@services/character.service.ts';
+import { CharacterService } from 'src/modules/character/character.service';
 
 import { RankingsRoutingModule } from './rankings-routing.module';
 import { CharactersComponent } from './characters/characters.component';

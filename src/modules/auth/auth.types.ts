@@ -9,3 +9,10 @@ export type User = {
     IsVip: number;
     VipExpirationTime: number;
 };
+
+export type LoginResponse = {
+    user: User;
+    token: JwtToken
+}
+
+export type JwtToken = string;

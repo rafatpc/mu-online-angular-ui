@@ -5,8 +5,8 @@ import { CharacterComponent } from './character/character.component';
 import { GuildComponent } from './guild/guild.component';
 import { DetailsRoutingModule } from './details-routing.module';
 import { ComponentsModule } from '../shared/components.module';
-import { CharacterService } from '@services/character.service';
-import { GuildService } from '@services/guild.service';
+import { CharacterService } from 'src/modules/character/character.service';
+import { GuildService } from 'src/modules/guild/guild.service';
 
 @NgModule({
     declarations: [

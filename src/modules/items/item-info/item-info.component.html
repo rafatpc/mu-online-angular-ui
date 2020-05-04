@@ -1,0 +1,21 @@
+<div class="item" [ngClass]="{'wings': Item.slot === 7}">
+    <img [src]="Item | ItemImage" [alt]="Item | ItemName" />
+
+    <div class="item-info-tooltip" [ngClass]="tooltipLocation">
+        <div class="name" [ngClass]="Item | ItemTypeClass">
+            {{Item | ItemName}}
+            <span *ngIf="Item.level > 0 && ItemConfig.Level === 0">
+                +{{Item.level}}
+            </span>
+        </div>
+        <div class="luck">
+            <div>Luck (success rate of Jewel of Soul +25%)</div>
+            <div>Luck (critical damage rate +5%)</div>
+        </div>
+        <div class="excellent">
+            <div *ngFor="let Option of Item.excellent; let index = index">
+                {{Item | ItemExcellentOption:index}}
+            </div>
+        </div>
+    </div>
+</div>

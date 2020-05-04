@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { CharacterData } from 'src/modules/character/character.types';
-import { CharacterService } from '@services/character.service';
+import { CharacterService } from 'src/modules/character/character.service';
 
 @Component({
     templateUrl: './character.component.html'

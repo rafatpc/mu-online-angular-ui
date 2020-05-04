@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SessionService } from '@services/session.service';
+import { SessionService } from 'src/modules/auth/session.service';
 
 @Component({
     selector: 'xweb-header',

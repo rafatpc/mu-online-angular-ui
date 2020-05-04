@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { GuildPositionDecode } from '@helpers/guild.helpers';
-import { GuildPosition } from '@type/guild.types';
+import { GuildPositionDecode } from 'src/modules/guild/guild.helpers';
+import { GuildPosition } from 'src/modules/guild/guild.types';
 
 // Transforms guild position level to position name
 @Pipe({ name: 'GuildPosition' })

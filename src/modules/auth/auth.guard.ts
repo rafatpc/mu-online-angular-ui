@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 
-import { SessionService } from '@services/session.service';
+import { SessionService } from 'src/modules/auth/session.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({ providedIn: 'root' })

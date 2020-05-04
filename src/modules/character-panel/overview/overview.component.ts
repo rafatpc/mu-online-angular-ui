@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 
-import { AccountService } from '@services/account.service';
+import { AccountService } from 'src/modules/account/account.service';
 import { CharacterData } from 'src/modules/character/character.types';
 import { DecodedItem } from 'src/modules/items/items.types';
 
