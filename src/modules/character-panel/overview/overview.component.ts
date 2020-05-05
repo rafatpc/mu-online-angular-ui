@@ -26,15 +26,6 @@ export class OverviewComponent {
             });
     }
 
-    getImg(Item: DecodedItem) {
-        const group = Item.group.toString(16).padStart(2, '0');
-        const id = Item.id.toString(16).padStart(2, '0');
-        const image = `00${group}${id}00`.toUpperCase();
-        console.log(Item.slot);
-
-        return `/assets/items/${image}.png`;
-    }
-
     // TODO: Export? Is it going to be needed somewhere else?
     private putWingsInfront(data: CharacterData): CharacterData {
         const wingsIndex = data.Inventory.Equipped.findIndex(Item => Item.slot === 7);

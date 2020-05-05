@@ -12,6 +12,10 @@
             <div>Luck (success rate of Jewel of Soul +25%)</div>
             <div>Luck (critical damage rate +5%)</div>
         </div>
+        <!-- TODO: Option type -->
+        <div *ngIf="Item.option > 0" class="option">
+            Additional defense +{{Item.option * 4}}
+        </div>
         <div class="excellent">
             <div *ngFor="let Option of Item.excellent; let index = index">
                 {{Item | ItemExcellentOption:index}}
@@ -20,7 +24,7 @@
         <div *ngIf="ItemConfig.Socket && HasSocket" class="sockets">
             <div class="item-socket-info">Socket item option</div>
             <div *ngFor="let Socket of Item.sockets" class="socket">
-                {{Socket.level}}, {{Socket.type}}
+                {{Socket | ItemSocketOption}}
             </div>
         </div>
     </div>

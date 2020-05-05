@@ -31,7 +31,7 @@ export class ItemsService {
             });
     }
 
-    find(Type: number, Id: number, Level?: number): ItemConfig[] | null {
+    getItem(Type: number, Id: number, Level?: number): ItemConfig[] | null {
         const items = this.items$.value;
 
         if (!items[Type]) {
@@ -49,7 +49,12 @@ export class ItemsService {
 
     getConfig(Item: DecodedItem): ItemConfig {
         const { group, id, level } = Item;
-        return this.find(group, id, level)[0];
+        return this.getItem(group, id, level)[0];
+    }
+
+    getSocket(Type): Socket {
+        const sockets = this.sockets$.value;
+        return sockets.find(Socket => Socket.Id === Type);
     }
 
     private createItemsConfigMap(data: ItemConfigRaw): ItemConfigRawMapped {

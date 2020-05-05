@@ -1,17 +1,11 @@
 import { Pipe, PipeTransform, Input } from '@angular/core';
 import { DecodedItem } from './items.types';
-import { ItemsService } from './items.service';
 import { ExcellentOptionsMap } from './excellent-options.data';
 
-// Get Item name from Item object
 @Pipe({ name: 'ItemExcellentOption' })
 export class ItemExcellentOptionPipe implements PipeTransform {
-    constructor(
-        private itemsService: ItemsService
-    ) { }
-
     transform(Item: DecodedItem, OptionIndex: number): string {
-        const { group, id } = Item;
+        const { group } = Item;
 
         let OptionsMap = [];
 

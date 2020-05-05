@@ -68,12 +68,18 @@ xweb-item-info {
             }
 
             .luck,
-            .excellent {
+            .option,
+            .excellent,
+            .socket {
                 color: #8b9ebf;
             }
 
             .sockets {
-                margin-top: 20px;;
+                margin-top: 20px;
+
+                .item-socket-info {
+                    margin-bottom: 10px;
+                }
             }
         }
 

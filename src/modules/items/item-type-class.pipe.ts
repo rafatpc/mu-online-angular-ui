@@ -14,10 +14,6 @@ export class ItemTypeClassPipe implements PipeTransform {
         const config: ItemConfig = this.itemsService.getConfig(Item);
 
         const isExcellent = this.hasExcellentOption(excellent) && group <= 11;
-
-        console.log(config);
-
-
         const isSocket = config?.Socket === true;
         const isExpensive = level >= 7;
         const isAncient = ancient > 0;

@@ -23,6 +23,7 @@ import { GuildMasterPipe } from '../guild/guild-master.pipe';
 // Items-related
 import { ItemInfoComponent } from '../items/item-info/item-info.component';
 import { ItemExcellentOptionPipe } from '../items/item-excellent-option.pipe';
+import { ItemSocketOptionPipe } from '../items/item-socket-option.pipe';
 import { ItemTypeClassPipe } from '../items/item-type-class.pipe';
 import { ItemImagePipe } from '../items/item-image.pipe';
 import { ItemNamePipe } from '../items/item-name.pipe';
@@ -49,6 +50,7 @@ const Modules = [
     ItemImagePipe,
     ItemNamePipe,
     ItemExcellentOptionPipe,
+    ItemSocketOptionPipe,
     ItemTypeClassPipe
 ];
 

@@ -21,10 +21,6 @@ export class ItemInfoComponent implements OnInit {
     ngOnInit() {
         this.Wings = this.Item.slot === 7;
         this.ItemConfig = this.itemsService.getConfig(this.Item);
-        this.HasSocket = this.Item.sockets.some(option => {
-            console.log(option);
-
-            return option !== null;
-        });
+        this.HasSocket = this.Item.sockets.some(option => option !== null);
     }
 }
