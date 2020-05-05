@@ -10,14 +10,13 @@ export class ItemImagePipe implements PipeTransform {
     ) { }
 
     transform(Item: DecodedItem): string {
-        const { group, id, level, ancient } = Item;
-        const item = this.itemsService.find(group, id);
+        const { Level, Type, Id } = this.itemsService.getConfig(Item) || {};
 
-        const type = 0; // Legacy
-        const levelItem = item?.length > 1 ? level : 0;
+        const ancient = 0; // Legacy
+        const levelItem = Level > 0 ? Item.level : 0;
 
-        // Item image: <<Item type>><<Group>><<Id>><<Level>>.png
-        const image = [type, group, id, levelItem]
+        // Item image: <<Ancient>><<Group>><<Id>><<Level>>.png
+        const image = [ancient, Type, Id, levelItem]
             .map(this.encodeSegment)
             .join('');
 

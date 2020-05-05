@@ -1,6 +1,28 @@
+export type ItemConfigRaw = {
+    Items: ItemConfig[];
+    Sockets: Socket[];
+};
+
+export type ItemConfigRawMapped = {
+    Items: ItemConfigMap;
+    Sockets: Socket[];
+}
+
 export interface ItemConfigMap {
     [type: number]: ItemConfig[];
 }
+
+export type Socket = {
+    Number: number;
+    Type: number;
+    Id: number;
+    Name: string;
+    Level1: number;
+    Level2: number;
+    Level3: number;
+    Level4: number;
+    Level5: number;
+};
 
 export type ItemConfig = {
     WS_Id: number;
@@ -28,7 +50,8 @@ export type ItemConfig = {
     Lord: number;
     Summoner: number;
     Ancient: string[] | null;
-    Skipp: { Id: number, Name: string } | null;
+    Socket: boolean;
+    Skill: { Id: number, Name: string } | null;
 };
 
 export type DecodedItem = {

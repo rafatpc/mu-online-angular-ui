@@ -12,6 +12,7 @@ export class ItemInfoComponent implements OnInit {
     @HostBinding('class.wings') Wings: boolean = false;
 
     ItemConfig: ItemConfig;
+    HasSocket: boolean;
 
     constructor(
         private itemsService: ItemsService
@@ -19,24 +20,11 @@ export class ItemInfoComponent implements OnInit {
 
     ngOnInit() {
         this.Wings = this.Item.slot === 7;
-        this.getItemConfig();
-    }
+        this.ItemConfig = this.itemsService.getConfig(this.Item);
+        this.HasSocket = this.Item.sockets.some(option => {
+            console.log(option);
 
-    // TODO: That should be exported to the ItemsService!
-    private getItemConfig() {
-        const { group, id, level, ancient } = this.Item;
-        const item = this.itemsService.find(group, id) || [];
-
-        let itemConfig = item[0];
-
-        if (item.length > 1) {
-            const found = item.filter(Item => Item.Level === level)[0];
-
-            if (found) {
-                itemConfig = found;
-            }
-        }
-
-        this.ItemConfig = itemConfig || {} as ItemConfig;
+            return option !== null;
+        });
     }
 }

@@ -8,12 +8,12 @@ import { ItemConfigMap } from './items.types';
 @Injectable({
     providedIn: 'root'
 })
-export class ItemsConfigResolver implements Resolve<ItemConfigMap> {
+export class ItemsConfigResolver implements Resolve<boolean> {
     constructor(
         private itemsService: ItemsService
     ) { }
 
-    resolve(): Observable<ItemConfigMap> | Promise<ItemConfigMap> | ItemConfigMap {
-        return this.itemsService.items$;
+    resolve(): Observable<boolean> | Promise<boolean> | boolean {
+        return this.itemsService.loaded$;
     }
 }

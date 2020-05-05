@@ -17,5 +17,11 @@
                 {{Item | ItemExcellentOption:index}}
             </div>
         </div>
+        <div *ngIf="ItemConfig.Socket && HasSocket" class="sockets">
+            <div class="item-socket-info">Socket item option</div>
+            <div *ngFor="let Socket of Item.sockets" class="socket">
+                {{Socket.level}}, {{Socket.type}}
+            </div>
+        </div>
     </div>
 </div>

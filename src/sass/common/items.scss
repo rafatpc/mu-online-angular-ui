@@ -15,6 +15,10 @@
         color: $item-socket;
     }
 
+    &-socket-info {
+        color: $item-socket-description;
+    }
+
     &-ancient {
         background-color: $item-ancient-background;
         color: $item-ancient;

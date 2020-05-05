@@ -1,42 +1,59 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subscription, BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
-import { ItemConfig, ItemConfigMap } from './items.types';
+import { ItemConfig, ItemConfigMap, DecodedItem, ItemConfigRaw, ItemConfigRawMapped, Socket } from './items.types';
 
 @Injectable({ providedIn: 'root' })
 export class ItemsService {
+    readonly loaded$: BehaviorSubject<boolean>;
     readonly items$: BehaviorSubject<ItemConfigMap>;
+    readonly sockets$: BehaviorSubject<Socket[]>;
 
     constructor(
         private http: HttpClient
     ) {
+        this.loaded$ = new BehaviorSubject<boolean>(false);
         this.items$ = new BehaviorSubject<ItemConfigMap>([]);
+        this.sockets$ = new BehaviorSubject<Socket[]>([]);
     }
 
     load() {
-        return this.http.get<ItemConfig[]>(`${environment.apiUrl}/config/items`)
+        return this.http.get<ItemConfigRaw>(`${environment.apiUrl}/config/items`)
             .pipe(map(this.createItemsConfigMap))
-            .subscribe((data: ItemConfigMap) => {
-                this.items$.next(data);
-                this.items$.complete();
+            .subscribe((data: ItemConfigRawMapped) => {
+                this.sockets$.next(data.Sockets);
+                this.items$.next(data.Items);
+                this.loaded$.next(true);
+                this.loaded$.complete();
             });
     }
 
-    find(Type: number, Id: number): ItemConfig[] | null {
+    find(Type: number, Id: number, Level?: number): ItemConfig[] | null {
         const items = this.items$.value;
 
         if (!items[Type]) {
             return null;
         }
 
-        return items[Type].filter(Item => Item.Id === Id);
+        const found = items[Type].filter(Item => Item.Id === Id);
+
+        if (found.some(Item => Item.Level === Level)) {
+            return found.filter(Item => Item.Level === Level);
+        }
+
+        return found;
     }
 
-    private createItemsConfigMap(data: ItemConfig[]): ItemConfigMap {
-        return data.reduce((Items, Item: ItemConfig) => {
+    getConfig(Item: DecodedItem): ItemConfig {
+        const { group, id, level } = Item;
+        return this.find(group, id, level)[0];
+    }
+
+    private createItemsConfigMap(data: ItemConfigRaw): ItemConfigRawMapped {
+        const Items = data.Items.reduce((Items, Item: ItemConfig) => {
             return {
                 ...Items,
                 [Item.Type]: [
@@ -45,6 +62,11 @@ export class ItemsService {
                 ]
             };
         }, {});
+
+        return {
+            Items,
+            Sockets: data.Sockets
+        }
     }
 }
 

@@ -1,13 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { DecodedItem, SocketOption } from './items.types';
+import { ItemsService } from './items.service';
+import { DecodedItem, ItemConfig } from './items.types';
 
 // Get Item image from Item object
 @Pipe({ name: 'ItemTypeClass' })
 export class ItemTypeClassPipe implements PipeTransform {
+    constructor(
+        private itemsService: ItemsService
+    ) { }
+
     transform(Item: DecodedItem): string {
-        const { excellent, level, ancient, sockets, group } = Item;
+        const { excellent, level, ancient, group } = Item;
+        const config: ItemConfig = this.itemsService.getConfig(Item);
+
         const isExcellent = this.hasExcellentOption(excellent) && group <= 11;
-        const isSocket = this.hasSocketOption(sockets);
+
+        console.log(config);
+
+
+        const isSocket = config?.Socket === true;
         const isExpensive = level >= 7;
         const isAncient = ancient > 0;
 
@@ -22,12 +33,6 @@ export class ItemTypeClassPipe implements PipeTransform {
         }
 
         return 'item-normal';
-    }
-
-    private hasSocketOption(sockets: SocketOption[]) {
-        return sockets.some(option => {
-            return option !== null && option.type !== null;
-        });
     }
 
     private hasExcellentOption(excellent: boolean[]) {
