@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
 
-import { SessionService } from './session.service';
+import { AuthSessionService } from './auth-session.service';
 import { ToastrService } from 'ngx-toastr';
 
 @Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
     constructor(
         private toastr: ToastrService,
-        private session: SessionService,
+        private session: AuthSessionService,
         private router: Router
     ) { }
 

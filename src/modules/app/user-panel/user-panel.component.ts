@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from '../../auth/auth.service';
-import { SessionService } from '../../auth/session.service';
+import { AuthSessionService } from '../../auth/auth-session.service';
 
 @Component({
     selector: 'xweb-user-panel',
@@ -16,7 +16,7 @@ export class UserPanelComponent {
 
     constructor(
         private auth: AuthenticationService,
-        private session: SessionService
+        private session: AuthSessionService
     ) {
         this.session.currentUser.subscribe(user => {
             if (!user) return;

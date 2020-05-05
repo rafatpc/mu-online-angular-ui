@@ -4,13 +4,13 @@ import { map } from 'rxjs/operators';
 
 import { environment } from '../../environments/environment';
 import { LoginResponse } from './auth.types';
-import { SessionService } from './session.service';
+import { AuthSessionService } from './auth-session.service';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     constructor(
         private http: HttpClient,
-        private session: SessionService
+        private session: AuthSessionService
     ) {
         if (session.accessToken !== null) {
             this.verifySession();

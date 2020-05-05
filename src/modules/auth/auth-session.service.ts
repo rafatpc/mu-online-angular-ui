@@ -6,7 +6,7 @@ import { User } from './auth.types';
 import { JwtToken } from './auth.types';
 
 @Injectable({ providedIn: 'root' })
-export class SessionService {
+export class AuthSessionService {
     private currentUserSubject: BehaviorSubject<User>;
     public currentUser: Observable<User>;
 

@@ -17,7 +17,7 @@ import { ContentComponent } from './content/content.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { AuthenticationService } from '../auth/auth.service';
-import { SessionService } from '../auth/session.service';
+import { AuthSessionService } from '../auth/auth-session.service';
 
 import { AuthInterceptor } from '../auth/auth.interceptor';
 import { ComponentsModule } from '../shared/components.module';
@@ -53,7 +53,7 @@ import { ItemsService, itemsProviderFactory } from '../items/items.service';
         { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
         { provide: APP_INITIALIZER, useFactory: itemsProviderFactory, deps: [ItemsService], multi: true },
         AuthenticationService,
-        SessionService,
+        AuthSessionService,
         ItemsService
     ],
     bootstrap: [AppComponent],
