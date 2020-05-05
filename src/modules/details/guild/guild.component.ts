@@ -8,8 +8,7 @@ import { GuildService } from '../../guild/guild.service';
     templateUrl: './guild.component.html'
 })
 export class GuildComponent implements OnInit {
-    loading: boolean = true;
-    Guild: GuildData = {} as GuildData;
+    Guild: GuildData;
 
     constructor(
         private guildService: GuildService,
@@ -17,15 +16,8 @@ export class GuildComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        return this.route.params.subscribe((params: { name: string }) => {
-            this.getGuildDetails(params.name);
-        });
-    }
-
-    private getGuildDetails(name: string) {
-        return this.guildService.getGuildDetails(name).subscribe((data: GuildData) => {
-            this.Guild = data;
-            this.loading = false;
+        return this.route.data.subscribe((data) => {
+            this.Guild = data.guild;
         });
     }
 }

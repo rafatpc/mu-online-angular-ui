@@ -11,7 +11,6 @@ import { DecodedItem } from 'src/modules/items/items.types';
 })
 export class OverviewComponent {
     Character: CharacterData = {} as any;
-    loading: boolean = true;
 
     constructor(
         private route: ActivatedRoute,
@@ -19,10 +18,12 @@ export class OverviewComponent {
     ) { }
 
     ngOnInit() {
-        // TODO: Implement Character resolver
-        return this.route.params.subscribe((params: { name: string }) => {
-            this.getCharacterDetails(params.name);
-        });
+        this.route.data
+            .pipe(map(data => data.character))
+            .pipe(map(this.putWingsInfront))
+            .subscribe(data => {
+                this.Character = data;
+            });
     }
 
     getImg(Item: DecodedItem) {
@@ -32,15 +33,6 @@ export class OverviewComponent {
         console.log(Item.slot);
 
         return `/assets/items/${image}.png`;
-    }
-
-    private getCharacterDetails(name: string) {
-        return this.account.getCharacter(name)
-            .pipe(map(this.putWingsInfront))
-            .subscribe((data: CharacterData) => {
-                this.Character = data;
-                this.loading = false;
-            });
     }
 
     // TODO: Export? Is it going to be needed somewhere else?

@@ -1,105 +1,102 @@
-<xweb-loading [show]="loading"></xweb-loading>
-<ng-container *ngIf="!loading">
-    <section class="character-panel-overview">
-        <section class="character-details">
-            <div class="title text-center">
-                <strong>Character Information</strong>
-            </div>
-            <table class="transparent">
-                <colgroup>
-                    <col style="width: 200px;" />
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <td>Level</td>
-                        <td>{{Character.cLevel}}</td>
-                    </tr>
-                    <tr>
-                        <td>Master Level</td>
-                        <td>
-                            {{Character.Master?.Level || 0}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Resets</td>
-                        <td>{{Character.Resets}}</td>
-                    </tr>
-                    <tr>
-                        <td>Grand Resets</td>
-                        <td>{{Character.GrandResets}}</td>
-                    </tr>
-                    <tr>
-                        <td>Guild</td>
-                        <td>
-                            <ng-container *ngIf="!Character.Guild;else guildLink">
-                                no guild
-                            </ng-container>
-                            <ng-template #guildLink>
-                                <a [routerLink]="['/details/guild', Character.Guild.G_Name]"
-                                   [innerText]="Character.Guild.G_Name"></a>
-                            </ng-template>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Class</td>
-                        <td>{{Character.Class | ClassName}}</td>
-                    </tr>
-                    <tr>
-                        <td>PK Level</td>
-                        <td>
-                            <span [class]="'pk-level-' + Character.PkLevel">
-                                {{Character.PkLevel | PkStatusName}} ({{Character.PkCount}})
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Location</td>
-                        <td>
-                            {{Character.MapNumber | MapName}}
-                            <span class="separator">
-                                {{Character.MapPosX}}
-                                {{Character.MapPosY}}
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Strength</td>
-                        <td>{{Character.Strength | NumberFormat}}</td>
-                    </tr>
-                    <tr>
-                        <td>Agility</td>
-                        <td>{{Character.Dexterity | NumberFormat}}</td>
-                    </tr>
-                    <tr>
-                        <td>Vitality</td>
-                        <td>{{Character.Vitality | NumberFormat}}</td>
-                    </tr>
-                    <tr>
-                        <td>Energy</td>
-                        <td>{{Character.Energy | NumberFormat}}</td>
-                    </tr>
-                    <tr *ngIf="Character.Leadership > 0">
-                        <td>Command</td>
-                        <td>{{Character.Leadership | NumberFormat}}</td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td class="status">
-                            <xweb-status [type]="Character | IsOnline"></xweb-status>
-                            {{Character | IsOnline:true}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="character-item-details">
-            <div class="title text-center">
-                <strong>Equipped Items</strong>
-            </div>
-            <div class="items-row">
-                <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"
-                                tooltip-location="left"></xweb-item-info>
-            </div>
-        </section>
+<section class="character-panel-overview">
+    <section class="character-details">
+        <div class="title text-center">
+            <strong>Character Information</strong>
+        </div>
+        <table class="transparent">
+            <colgroup>
+                <col style="width: 200px;" />
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>Level</td>
+                    <td>{{Character.cLevel}}</td>
+                </tr>
+                <tr>
+                    <td>Master Level</td>
+                    <td>
+                        {{Character.Master?.Level || 0}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Resets</td>
+                    <td>{{Character.Resets}}</td>
+                </tr>
+                <tr>
+                    <td>Grand Resets</td>
+                    <td>{{Character.GrandResets}}</td>
+                </tr>
+                <tr>
+                    <td>Guild</td>
+                    <td>
+                        <ng-container *ngIf="!Character.Guild;else guildLink">
+                            no guild
+                        </ng-container>
+                        <ng-template #guildLink>
+                            <a [routerLink]="['/details/guild', Character.Guild.G_Name]"
+                               [innerText]="Character.Guild.G_Name"></a>
+                        </ng-template>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Class</td>
+                    <td>{{Character.Class | ClassName}}</td>
+                </tr>
+                <tr>
+                    <td>PK Level</td>
+                    <td>
+                        <span [class]="'pk-level-' + Character.PkLevel">
+                            {{Character.PkLevel | PkStatusName}} ({{Character.PkCount}})
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>
+                        {{Character.MapNumber | MapName}}
+                        <span class="separator">
+                            {{Character.MapPosX}}
+                            {{Character.MapPosY}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Strength</td>
+                    <td>{{Character.Strength | NumberFormat}}</td>
+                </tr>
+                <tr>
+                    <td>Agility</td>
+                    <td>{{Character.Dexterity | NumberFormat}}</td>
+                </tr>
+                <tr>
+                    <td>Vitality</td>
+                    <td>{{Character.Vitality | NumberFormat}}</td>
+                </tr>
+                <tr>
+                    <td>Energy</td>
+                    <td>{{Character.Energy | NumberFormat}}</td>
+                </tr>
+                <tr *ngIf="Character.Leadership > 0">
+                    <td>Command</td>
+                    <td>{{Character.Leadership | NumberFormat}}</td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td class="status">
+                        <xweb-status [type]="Character | IsOnline"></xweb-status>
+                        {{Character | IsOnline:true}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </section>
-</ng-container>
+    <section class="character-item-details">
+        <div class="title text-center">
+            <strong>Equipped Items</strong>
+        </div>
+        <div class="items-row">
+            <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item" tooltip-location="left">
+            </xweb-item-info>
+        </div>
+    </section>
+</section>

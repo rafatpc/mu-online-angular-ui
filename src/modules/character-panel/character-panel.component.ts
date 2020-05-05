@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { AccountService } from '../account/account.service';
 import { CharacterData } from '../character/character.types';
 
 @Component({
@@ -9,7 +8,6 @@ import { CharacterData } from '../character/character.types';
 })
 export class CharacterPanelComponent implements OnInit {
     Character: CharacterData = {} as any;
-    loading: boolean = true;
 
     navigation = [
         { quick: 1, path: 'reset', name: 'Reset', icon: 'fas fa-sync-alt' },
@@ -23,24 +21,15 @@ export class CharacterPanelComponent implements OnInit {
     quick = [];
 
     constructor(
-        private route: ActivatedRoute,
-        private account: AccountService
+        private route: ActivatedRoute
     ) { }
 
     ngOnInit() {
-        return this.route.params.subscribe((params: { name: string }) => {
-            this.getCharacterDetails(params.name);
-
+        this.route.data.subscribe((data) => {
+            this.Character = data.character;
             this.quick = this.navigation
                 .filter(route => route.quick > 0)
                 .sort((a, b) => a > b ? -1 : 1);
-        });
-    }
-
-    private getCharacterDetails(name: string) {
-        return this.account.getCharacter(name).subscribe((data: CharacterData) => {
-            this.Character = data;
-            this.loading = false;
         });
     }
 }

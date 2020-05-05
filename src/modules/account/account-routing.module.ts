@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CharactersComponent } from './characters/characters.component'
+import { AuthGuard } from '../auth/auth.guard';
+import { ItemsConfigResolver } from '../items/items.resolver';
 import { CharacterPanelComponent } from '../character-panel/character-panel.component';
 import { CharacterPanelRoutes } from '../character-panel/character-panel-routing.module';
-import { AuthGuard } from '../auth/auth.guard';
+
+import { CharactersComponent } from './characters/characters.component'
+import { AccountCharacterResolver } from './account-character.resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: 'characters', canActivate: [AuthGuard] },
@@ -13,7 +16,11 @@ const routes: Routes = [
         path: 'character/:name',
         component: CharacterPanelComponent,
         children: CharacterPanelRoutes,
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        resolve: {
+            character: AccountCharacterResolver,
+            items: ItemsConfigResolver
+        }
     }
 ];
 

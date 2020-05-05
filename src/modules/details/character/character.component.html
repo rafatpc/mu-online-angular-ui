@@ -1,88 +1,84 @@
-<xweb-loading [show]="loading"></xweb-loading>
-<ng-container *ngIf="!loading">
-    <section class="character-details">
-        <div class="character">
-            <h1>{{Character.Name}}</h1>
-            <div class="img-wrapper">
-                <img class="no-drag" [src]="Character.Class | ClassCharacterImage"
-                     [alt]="Character.Class | ClassName" />
-            </div>
+<section class="character-details">
+    <div class="character">
+        <h1>{{Character.Name}}</h1>
+        <div class="img-wrapper">
+            <img class="no-drag" [src]="Character.Class | ClassCharacterImage" [alt]="Character.Class | ClassName" />
         </div>
-        <div class="statistics">
-            <div class="title text-center">
-                <strong>Character Information</strong>
-            </div>
-            <table class="transparent">
-                <tbody>
-                    <tr>
-                        <td>Level</td>
-                        <td>{{Character.cLevel}}</td>
-                    </tr>
-                    <tr>
-                        <td>Master Level</td>
-                        <td>
-                            {{Character.Master?.Level || 0}}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Resets</td>
-                        <td>{{Character.Resets}}</td>
-                    </tr>
-                    <tr>
-                        <td>Grand Resets</td>
-                        <td>{{Character.GrandResets}}</td>
-                    </tr>
-                    <tr>
-                        <td>Guild</td>
-                        <td>
-                            <ng-container *ngIf="!Character.Guild;else guildLink">
-                                no guild
-                            </ng-container>
-                            <ng-template #guildLink>
-                                <a [routerLink]="['/details/guild', Character.Guild.G_Name]"
-                                   [innerText]="Character.Guild.G_Name"></a>
-                            </ng-template>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Class</td>
-                        <td>{{Character.Class | ClassName}}</td>
-                    </tr>
-                    <tr>
-                        <td>PK Level</td>
-                        <td>
-                            <span [class]="'pk-level-' + Character.PkLevel">
-                                {{Character.PkLevel | PkStatusName}} ({{Character.PkCount}})
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Location</td>
-                        <td>
-                            {{Character.MapNumber | MapName}}
-                            <span class="separator">
-                                {{Character.MapPosX}}
-                                {{Character.MapPosY}}
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Status</td>
-                        <td class="status">
-                            <xweb-status [type]="Character | IsOnline"></xweb-status>
-                            {{Character | IsOnline:true}}
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-    <section class="character-item-details">
+    </div>
+    <div class="statistics">
         <div class="title text-center">
-            <strong>Equipped Items</strong>
+            <strong>Character Information</strong>
         </div>
-        <div class="items-row">
-            <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"></xweb-item-info>
-        </div>
-    </section>
-</ng-container>
+        <table class="transparent">
+            <tbody>
+                <tr>
+                    <td>Level</td>
+                    <td>{{Character.cLevel}}</td>
+                </tr>
+                <tr>
+                    <td>Master Level</td>
+                    <td>
+                        {{Character.Master?.Level || 0}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Resets</td>
+                    <td>{{Character.Resets}}</td>
+                </tr>
+                <tr>
+                    <td>Grand Resets</td>
+                    <td>{{Character.GrandResets}}</td>
+                </tr>
+                <tr>
+                    <td>Guild</td>
+                    <td>
+                        <ng-container *ngIf="!Character.Guild;else guildLink">
+                            no guild
+                        </ng-container>
+                        <ng-template #guildLink>
+                            <a [routerLink]="['/details/guild', Character.Guild.G_Name]"
+                               [innerText]="Character.Guild.G_Name"></a>
+                        </ng-template>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Class</td>
+                    <td>{{Character.Class | ClassName}}</td>
+                </tr>
+                <tr>
+                    <td>PK Level</td>
+                    <td>
+                        <span [class]="'pk-level-' + Character.PkLevel">
+                            {{Character.PkLevel | PkStatusName}} ({{Character.PkCount}})
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Location</td>
+                    <td>
+                        {{Character.MapNumber | MapName}}
+                        <span class="separator">
+                            {{Character.MapPosX}}
+                            {{Character.MapPosY}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td class="status">
+                        <xweb-status [type]="Character | IsOnline"></xweb-status>
+                        {{Character | IsOnline:true}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+<section class="character-item-details">
+    <div class="title text-center">
+        <strong>Equipped Items</strong>
+    </div>
+    <div class="items-row">
+        <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item"></xweb-item-info>
+    </div>
+</section>
