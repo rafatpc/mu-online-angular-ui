@@ -8,18 +8,25 @@
                 +{{Item.level}}
             </span>
         </div>
-        <div class="luck">
+        <div *ngIf="Item.luck && ItemData.Luck" class="luck">
             <div>Luck (success rate of Jewel of Soul +25%)</div>
             <div>Luck (critical damage rate +5%)</div>
         </div>
-        <!-- TODO: Option type -->
         <div *ngIf="Item.option > 0" class="option">
-            Additional defense +{{Item.option * 4}}
+            {{Option}}
+            <ng-container *ngIf="!OptionPercentage; else percentage">
+                {{'+' + (Item.option * 4)}}
+            </ng-container>
+            <ng-template #percentage>
+                {{Item.option + '%'}}
+            </ng-template>
         </div>
-        <div class="excellent">
-            <div *ngFor="let Option of Item.excellent; let index = index">
-                {{Item | ItemExcellentOption:index}}
-            </div>
+        <div *ngIf="HasExcellent" class="excellent">
+            <ng-container *ngFor="let Option of Item.excellent; let index = index">
+                <div *ngIf="Option">
+                    {{Item | ItemExcellentOption:index}}
+                </div>
+            </ng-container>
         </div>
         <div *ngIf="ItemConfig.Socket && HasSocket" class="sockets">
             <div class="item-socket-info">Socket item option</div>

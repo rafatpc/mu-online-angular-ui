@@ -39,6 +39,10 @@
         color: $item-guardian;
     }
 
+    &-options {
+        color: $item-options;
+    }
+
     img.ancient {
         filter: sepia(40%)
                 hue-rotate(15deg)

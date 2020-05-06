@@ -34,8 +34,9 @@ xweb-item-info {
         }
 
         [tooltip-content] {
-            background-color: transparentize($character-details-item-background, 0.1);
+            background-color: transparentize($character-details-item-background, 0.07);
             border: 1px solid $details-borders;
+            white-space: nowrap;
 
             .name {
                 margin-bottom: 10px;
@@ -44,13 +45,24 @@ xweb-item-info {
                 &.item-ancient {
                     width: 100%;
                 }
+
+                &:only-child {
+                    margin-bottom: 0;
+                }
             }
 
             .luck,
             .option,
             .excellent,
             .socket {
-                color: #8b9ebf;
+                color: $item-options;
+            }
+
+            .luck > div,
+            .option,
+            .excellent > div,
+            .socket {
+                margin-bottom: 3px;
             }
 
             .excellent {

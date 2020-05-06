@@ -12,6 +12,21 @@ export interface ItemConfigMap {
     [type: number]: ItemConfig[];
 }
 
+export interface ItemDataMap {
+    [type: number]: ItemData;
+}
+
+export type ItemData = {
+    ExcellentOptions: ExcellentOptionsMap;
+    Option: string[];
+    OptionPercentage: boolean;
+    Luck: boolean;
+}
+
+export interface ExcellentOptionsMap {
+    [type: number]: string[];
+}
+
 export type Socket = {
     Number: number;
     Type: number;
@@ -30,6 +45,7 @@ export type ItemConfig = {
     WS_Hidden: number;
     Type: number;
     Id: number;
+    Slot: number;
     X: number;
     Y: number;
     Serial: number;

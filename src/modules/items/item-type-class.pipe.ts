@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { ItemsService } from './items.service';
-import { DecodedItem, ItemConfig } from './items.types';
+import { DecodedItem } from './items.types';
 
 // Get Item image from Item object
 @Pipe({ name: 'ItemTypeClass' })
@@ -11,10 +11,11 @@ export class ItemTypeClassPipe implements PipeTransform {
 
     transform(Item: DecodedItem): string {
         const { excellent, level, ancient, group } = Item;
-        const config: ItemConfig = this.itemsService.getConfig(Item);
+        const { Slot, Socket } = this.itemsService.getConfig(Item) || {};
 
-        const isExcellent = this.hasExcellentOption(excellent) && group <= 11;
-        const isSocket = config?.Socket === true;
+        const canBeExcellent = Slot >= 0 && Slot !== 7;
+        const isExcellent = this.hasExcellentOption(excellent) && canBeExcellent;
+        const isSocket = Socket === true;
         const isExpensive = level >= 7;
         const isAncient = ancient > 0;
 
