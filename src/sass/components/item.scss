@@ -7,11 +7,6 @@ xweb-item-info {
 
     &.wings {
         width: ($character-details-item-dimension * 2 + $character-details-item-spacing);
-
-        .excellent {
-            order: 15 !important;
-            flex-direction: column !important;
-        }
     }
 
     &:hover {
@@ -51,17 +46,12 @@ xweb-item-info {
                 }
             }
 
-            .luck,
-            .option,
-            .excellent,
-            .socket {
-                color: $item-options;
-            }
-
+            .skill,
             .luck > div,
             .option,
             .excellent > div,
             .socket {
+                color: $item-options;
                 margin-bottom: 3px;
             }
 
@@ -70,9 +60,13 @@ xweb-item-info {
                 flex-direction: column-reverse;
             }
 
-            .sockets {
+            .luck ~ .sockets,
+            .option  ~ .sockets,
+            .excellent  ~ .sockets {
                 margin-top: 20px;
+            }
 
+            .sockets {
                 .item-socket-info {
                     margin-bottom: 10px;
                 }
@@ -86,12 +80,25 @@ xweb-item-info {
                 }
             }
 
-            // Order
+            
+        }
+
+        
+        // Order
+        [tooltip-content] {
             .name { order: 10; }
-            .luck { order: 20; }
-            .option { order: 30; }
-            .excellent { order: 40; }
-            .sockets { order: 50; }
+            .skill { order: 20; }
+            .luck { order: 30; }
+            .option { order: 40; }
+            .excellent { order: 50; }
+            .sockets { order: 60; }
+        }
+        
+        &.wings {
+            .excellent {
+                order: 25 !important;
+                flex-direction: column !important;
+            }
         }
     }
 }

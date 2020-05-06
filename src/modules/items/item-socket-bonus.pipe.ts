@@ -10,7 +10,7 @@ export class ItemSocketBonusPipe implements PipeTransform {
 
     transform(Sockets: SocketOption[]): any[] {
         const SocketsConfig: number[] = Sockets.map(Socket => {
-            if (Socket.type === null) {
+            if (!Socket || Socket.type === null) {
                 return 0;
             }
 

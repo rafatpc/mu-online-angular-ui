@@ -8,6 +8,9 @@
                 +{{Item.level}}
             </span>
         </div>
+        <div *ngIf="Item.skill && ItemConfig.Skill" class="skill">
+            {{ItemConfig.Skill.Name}}
+        </div>
         <div *ngIf="Item.luck && ItemData.Luck" class="luck">
             <div>Luck (success rate of Jewel of Soul +25%)</div>
             <div>Luck (critical damage rate +5%)</div>
@@ -32,14 +35,16 @@
             <div class="item-socket-info">Socket item option</div>
 
             <ng-container *ngFor="let Socket of Item.sockets; let SocketIndex = index">
-                <div *ngIf="Socket.type !== null" class="socket">
-                    <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
-                    {{Socket | ItemSocketOption}}
-                </div>
-                <div *ngIf="Socket.type === null" class="socket empty">
-                    <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
-                    No item application
-                </div>
+                <ng-container *ngIf="Socket !== null">
+                    <div *ngIf="Socket.type !== null" class="socket">
+                        <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
+                        {{Socket | ItemSocketOption}}
+                    </div>
+                    <div *ngIf="Socket.type === null" class="socket empty">
+                        <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
+                        No item application
+                    </div>
+                </ng-container>
             </ng-container>
 
             <ng-container *ngIf="Item.sockets | ItemSocketBonus; let BonusSockets">
