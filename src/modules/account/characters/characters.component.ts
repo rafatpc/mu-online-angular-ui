@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from '../account.service';
-import { CharacterData } from '../../character/character.types';
+import { ActivatedRoute } from '@angular/router';
+
+import { CharacterData, AccountCharacters } from '../../character/character.types';
 
 @Component({
     templateUrl: './characters.component.html'
@@ -8,11 +9,14 @@ import { CharacterData } from '../../character/character.types';
 export class CharactersComponent implements OnInit {
     characters: Partial<CharacterData>[];
 
-    constructor(private account: AccountService) { }
+    constructor(
+        private route: ActivatedRoute
+    ) { }
 
     ngOnInit() {
-        this.account.getCharacters().subscribe(Data => {
-            this.characters = Data.Characters;
+        this.route.data.subscribe((data) => {
+            const Account: AccountCharacters = data.characters;
+            this.characters = Account.Characters;
         });
     }
 }

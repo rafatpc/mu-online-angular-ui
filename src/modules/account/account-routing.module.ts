@@ -6,12 +6,20 @@ import { ItemsConfigResolver } from '../items/items.resolver';
 import { CharacterPanelComponent } from '../character-panel/character-panel.component';
 import { CharacterPanelRoutes } from '../character-panel/character-panel-routing.module';
 
-import { CharactersComponent } from './characters/characters.component'
+import { CharactersComponent } from './characters/characters.component';
+import { AccountCharactersResolver } from './account-characters.resolver';
 import { AccountCharacterResolver } from './account-character.resolver';
 
 const routes: Routes = [
     { path: '', redirectTo: 'characters', canActivate: [AuthGuard] },
-    { path: 'characters', component: CharactersComponent, canActivate: [AuthGuard] },
+    {
+        path: 'characters',
+        component: CharactersComponent,
+        canActivate: [AuthGuard],
+        resolve: {
+            characters: AccountCharactersResolver
+        }
+    },
     {
         path: 'character/:name',
         component: CharacterPanelComponent,

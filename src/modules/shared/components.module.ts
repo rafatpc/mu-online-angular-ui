@@ -7,8 +7,6 @@ import { LoadingComponent } from './loading/loading.component';
 import { StatusComponent } from './status/status.component';
 import { NumberFormatPipe } from './number-format.pipe';
 import { PadZerosPipe } from './pad-zeros.pipe';
-// Account-related
-import { OnlineSincePipe } from '../account/online-since.pipe';
 // Character-related
 import { MapNamePipe } from '../map/map-decode.pipe';
 import { PkStatusPipe } from '../character/pk-status.pipe';
@@ -16,6 +14,7 @@ import { ClassCharacterImagePipe } from '../class/class-character-image.pipe';
 import { ClassNamePipe } from '../class/class-name.pipe';
 import { ClassImagePipe } from '../class/class-image.pipe';
 import { IsOnlinePipe } from '../character/is-online.pipe';
+import { OnlineSincePipe } from './online-since.pipe';
 // Guild-related
 import { GuildMarkComponent } from '../guild/guild-mark/guild-mark.component';
 import { GuildPositionPipe } from '../guild/guild-position.pipe';
