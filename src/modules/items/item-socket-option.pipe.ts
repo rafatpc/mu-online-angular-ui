@@ -14,7 +14,8 @@ export class ItemSocketOptionPipe implements PipeTransform {
         }
 
         const SocketConfig = this.itemsService.getSocket(type);
-        const Value = SocketConfig['Level' + (level + 1)];
+        const Level = (level + 1) > 5 ? 5 : (level + 1);
+        const Value = SocketConfig['Level' + Level];
 
         let Option = `${SocketConfig.Name} +${Value}`;
 

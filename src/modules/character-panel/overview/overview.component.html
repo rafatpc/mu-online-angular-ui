@@ -5,7 +5,7 @@
         </div>
         <table class="transparent">
             <colgroup>
-                <col style="width: 200px;" />
+                <col style="width: 150px;" />
             </colgroup>
             <tbody>
                 <tr>
@@ -96,6 +96,15 @@
         </div>
         <div class="items-row">
             <xweb-item-info *ngFor="let Item of Character?.Inventory.Equipped" [item]="Item" tooltip-location="left">
+            </xweb-item-info>
+        </div>
+    </section>
+    <section class="character-item-details storage">
+        <div class="title text-center">
+            <strong>Storage</strong>
+        </div>
+        <div class="items-row">
+            <xweb-item-info *ngFor="let Item of Character?.Inventory.Storage" [item]="Item" tooltip-location="left">
             </xweb-item-info>
         </div>
     </section>

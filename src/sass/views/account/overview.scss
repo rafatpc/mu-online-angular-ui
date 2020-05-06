@@ -4,24 +4,38 @@
     .character-details {
         display: flex;
         flex-direction: column;
-        flex: 1;
         margin-right: 20px;
+        flex: 1;
+        width: auto;
     }
 
     .character-item-details {
-        width: 143px;
+        &:not(.storage) {
+            margin-right: 20px;
+            // flex: 0 0 143px;
+            width: 143px;
 
-        .items-row {
-            padding: 10px 5px;
+            .items-row {
+                padding: 10px 5px;
 
-            // If Wings are infront. They take 2x space.
-            xweb-item-info.wings,
-            xweb-item-info.wings:first-child ~ xweb-item-info:nth-child(2n + 1) {
-                margin-right: 0;
+                // If Wings are infront. They take 2x space.
+                xweb-item-info.wings,
+                xweb-item-info.wings:first-child ~ xweb-item-info:nth-child(2n + 1) {
+                    margin-right: 0;
+                }
+
+                // Else
+                xweb-item-info:first-child:not(.wings) ~ xweb-item-info:nth-child(even) {
+                    margin-right: 0;
+                }
             }
+        }
 
-            // Else
-            xweb-item-info:first-child:not(.wings) ~ xweb-item-info:nth-child(even) {
+        &.storage {
+            // flex: 0 0 212px;
+            width: 212px;
+
+            xweb-item-info:first-child ~ xweb-item-info:nth-child(3n) {
                 margin-right: 0;
             }
         }

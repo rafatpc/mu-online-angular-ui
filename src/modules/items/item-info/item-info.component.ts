@@ -27,6 +27,11 @@ export class ItemInfoComponent implements OnInit {
         this.Wings = this.Item.slot === 7;
         this.ItemConfig = this.itemsService.getConfig(this.Item);
         this.ItemData = ItemDataConfig[this.ItemConfig.Slot];
+
+        if (this.ItemConfig.Slot === -1) {
+            return;
+        }
+
         this.HasSocket = this.Item.sockets.some(option => option !== null);
 
         // Deal with Wings specific things...
@@ -39,9 +44,6 @@ export class ItemInfoComponent implements OnInit {
         });
 
         if (this.Wings) {
-            console.log(this.ItemData);
-
-
             if (this.Item.excellent[5]) {
                 this.Option = this.ItemData.Option[1];
                 this.OptionPercentage = true;
