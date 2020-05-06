@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform, Input } from '@angular/core';
-import { DecodedItem, SocketOption } from './items.types';
+import { Pipe, PipeTransform } from '@angular/core';
+import { SocketOption } from './items.types';
 import { ItemsService } from './items.service';
 
 @Pipe({ name: 'ItemSocketOption' })
@@ -10,16 +10,37 @@ export class ItemSocketOptionPipe implements PipeTransform {
         const { type, level } = Socket;
 
         if (type === null) {
-            return ''; // TODO: Empty?
+            return 'No item application';
         }
 
         const SocketConfig = this.itemsService.getSocket(type);
         const Value = SocketConfig['Level' + (level + 1)];
 
+        let Option = `${SocketConfig.Name} +${Value}`;
+
         if (SocketConfig.Name.match(/%$/)) {
-            return SocketConfig.Name.replace(/(.*)%$/, `$1 +${Value}%`);
+            Option = SocketConfig.Name.replace(/(.*)%$/, `$1 +${Value}%`);
         }
 
-        return `${SocketConfig.Name} +${Value}`;
+        return this.getSocketTypeName(SocketConfig.Type, Option);
+    }
+
+    private getSocketTypeName(Type, Socket) {
+        switch (Type) {
+            case 1:
+                return `Fire(${Socket})`;
+            case 2:
+                return `Water(${Socket})`;
+            case 3:
+                return `Ice(${Socket})`;
+            case 4:
+                return `Wind(${Socket})`;
+            case 5:
+                return `Lighting(${Socket})`;
+            case 6:
+                return `Earth(${Socket})`;
+        }
+
+        return Socket;
     }
 }

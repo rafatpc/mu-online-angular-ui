@@ -1,0 +1,49 @@
+[tooltip-content] {
+    background-color: transparentize($gray-light, 0.1);
+    border: 1px solid $gray;
+    border-radius: 3px;
+    padding: 20px 5px;
+
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    z-index: 999;
+
+    width: auto;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: center;
+    flex-direction: column;
+
+    &.top {
+        animation: tooltips-vert 300ms ease-out forwards;
+        transform: translate(-50%, -95%);
+        top: -10px;
+        left: 50%;
+    }
+
+    &.left {
+        animation: tooltips-horz 300ms ease-out forwards;
+        transform: translate(-95%, -50%);
+        top: 50%;
+        left: -10px;
+    }
+}
+
+[tooltip]:hover {
+    [tooltip-content] {
+        display: flex;
+    }
+}
+
+@keyframes tooltips-vert {
+    to {
+        transform: translate(-50%, -100%);
+    }
+}
+
+@keyframes tooltips-horz {
+    to {
+        transform: translate(-100%, -50%);
+    }
+}

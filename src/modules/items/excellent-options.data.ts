@@ -16,11 +16,11 @@ export const ExcellentOptionsMap = {
         'Increase Max HP +4%'
     ],
     3: [
-        'Increase Attacking(Wizardry)speed +7',
-        '+50 Stamina',
+        '+115 Life',
+        '+115 Mana',
         'Ignore Enemy\'s defense 3%',
-        '+115 MP',
-        '+115 HP'
+        '+50 AG',
+        'Increase Attacking(Wizardry)speed +7'
     ],
     4: ['+Damage', '+Defense', '+Illusion'],
 };

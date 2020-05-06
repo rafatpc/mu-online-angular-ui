@@ -27,6 +27,7 @@ import { ItemSocketOptionPipe } from '../items/item-socket-option.pipe';
 import { ItemTypeClassPipe } from '../items/item-type-class.pipe';
 import { ItemImagePipe } from '../items/item-image.pipe';
 import { ItemNamePipe } from '../items/item-name.pipe';
+import { ItemSocketBonusPipe } from '../items/item-socket-bonus.pipe';
 
 const Modules = [
     CheckboxComponent,
@@ -51,6 +52,7 @@ const Modules = [
     ItemNamePipe,
     ItemExcellentOptionPipe,
     ItemSocketOptionPipe,
+    ItemSocketBonusPipe,
     ItemTypeClassPipe
 ];
 

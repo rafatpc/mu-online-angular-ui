@@ -1,7 +1,7 @@
-<div class="item" [ngClass]="{'wings': Item.slot === 7}">
+<div class="item" [ngClass]="{'wings': Item.slot === 7}" tooltip>
     <img [src]="Item | ItemImage" [alt]="Item | ItemName" />
 
-    <div class="item-info-tooltip" [ngClass]="tooltipLocation">
+    <div [ngClass]="tooltipLocation" tooltip-content>
         <div class="name" [ngClass]="Item | ItemTypeClass">
             {{Item | ItemName}}
             <span *ngIf="Item.level > 0 && ItemConfig.Level === 0">
@@ -23,9 +23,26 @@
         </div>
         <div *ngIf="ItemConfig.Socket && HasSocket" class="sockets">
             <div class="item-socket-info">Socket item option</div>
-            <div *ngFor="let Socket of Item.sockets" class="socket">
-                {{Socket | ItemSocketOption}}
-            </div>
+
+            <ng-container *ngFor="let Socket of Item.sockets; let SocketIndex = index">
+                <div *ngIf="Socket.type !== null" class="socket">
+                    <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
+                    {{Socket | ItemSocketOption}}
+                </div>
+                <div *ngIf="Socket.type === null" class="socket empty">
+                    <span class="socket-number">Socket {{SocketIndex + 1}}:</span>
+                    No item application
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="Item.sockets | ItemSocketBonus; let BonusSockets">
+                <div *ngIf="BonusSockets.length > 0" class="bonus">
+                    <div class="item-socket-info">Socket item option</div>
+                    <div *ngFor="let Socket of BonusSockets" class="socket">
+                        {{Socket.Name}} +{{Socket.Value}}
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
