@@ -1,31 +1,86 @@
 button,
 .button {
     @include font();
-    @include gradient(180deg, $button-gradient);
-    border: 1px solid $button-border !important;
-    color: $button-color !important;
-    border-radius: 6px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    text-transform: uppercase;
     cursor: pointer;
+    border-radius: 5px;
+
+    transition: background ease-in-out 90ms;
+    background-color: $button-background;
+    color: $button-color;
+    border: 1px solid $button-border-color;
 
     &.selected,
     &:active,
-    &:focus,
-    &:hover {
-        @include gradient(180deg, $button-hover-gradient);
-        color: $button-color-hover !important;
+    &:hover,
+    &:focus {
+        background-color: $button-hover-background;
+        color: $button-hover-color;
+        outline: 0;
+    }
+
+    &::after {
+        background-color: $button-ripple-color;
     }
 
     &.gray {
-        @include gradient(180deg, $button-gray-gradient);
-        border: 1px solid $button-gray-border !important;
-        color: $button-gray-color !important;
+        background-color: $button-gray-background;
+        border-color: $button-gray-border;
+        color: $button-gray-color;
 
         &.selected,
         &:active,
         &:focus,
         &:hover {
-            @include gradient(180deg, $button-gray-hover-gradient);
-            color: $button-gray-hover-color !important;
+            background-color: $button-gray-hover-background;
+            color: $button-gray-hover-color;
+        }        
+
+        &::after {
+            background-color: $button-grayripple-color;
         }
+    }
+}
+
+button,
+.button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after,
+.button::after {
+    display: none;
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+
+    width: 100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+
+    /* Ripple */
+    animation: ripple 1s;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+}
+
+button:focus:not(:active)::after,
+.button:focus:not(:active)::after {
+    display: block;
+}
+
+@keyframes ripple {
+    from {
+        opacity: 1;
+        transform: scale(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(10);
     }
 }

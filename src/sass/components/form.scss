@@ -1,0 +1,99 @@
+form {
+    .field {
+        position: relative;
+        margin-bottom: 25px;
+
+        .input {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            input {
+                border-bottom: 2px solid $gray;
+                font-size: 14px;
+                height: 40px;
+                width: 100%;
+
+                &:focus {
+                    border-bottom-color: $yellow;
+                    outline: 0;
+                }
+
+                &.ng-dirty,
+                &:focus {
+                    padding: 19px 6px 10px;
+                }
+            }
+
+            label,
+            .placeholder,
+            .hint {
+                position: absolute;
+                color: #444444;
+            }
+
+            label {
+                left: -10px;
+                transform: translate(-100%, 0);
+            }
+
+            .hint {
+                right: -10px;
+                transform: translate(100%, 0);
+                font-size: 10px;
+            }
+
+            .placeholder {
+                transition: left ease-in-out .1s,
+                            top ease-in-out .1s,
+                            font-size ease-in-out .1s;
+                text-transform: lowercase;
+                pointer-events: none;
+                left: 8px;
+                top: calc(50% - 8px);
+            }
+
+            input:focus {
+                & ~ label,
+                & ~ .placeholder,
+                & ~ .hint {
+                    color: $yellow;
+                }
+            }
+
+            input.ng-invalid:not(:focus):not(.ng-untouched) {
+                & ~ label,
+                & ~ .placeholder,
+                & ~ .hint {
+                    color: $error;
+                }
+            }
+
+            input.ng-valid:not(:focus):not(.ng-untouched) {
+                & ~ label,
+                & ~ .placeholder,
+                & ~ .hint {
+                    color: $green;
+                }
+            }
+
+            input:focus,
+            input.ng-dirty:not(.empty) {
+                & ~ .placeholder {
+                    font-size: 8px;
+                    left: 7px;
+                    top: 7px;
+                }
+            }
+
+            & ~ div {
+                color: $error;
+                font-size: 12px;
+                transform: translate(0, 100%);
+                position: absolute;
+                bottom: -3px;
+                left: 7px;
+            }
+        }
+    }
+}

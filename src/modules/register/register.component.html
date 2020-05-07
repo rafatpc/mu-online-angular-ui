@@ -1,45 +1,74 @@
-<form class="register-form">
+<form class="register-form" autocomplete="off">
     <h1>Registration</h1>
 
-    <!-- <mat-form-field>
-        <mat-label>Username</mat-label>
-        <input matInput #usernameInput autofocus type="text" [formControl]="username" [errorStateMatcher]="matcher"
-               maxlength="10" placeholder="muonline" />
-        <mat-hint align="end">{{usernameInput.value?.length || 0}}/10</mat-hint>
-        <mat-error *ngIf="username.getError('minlength') || username.getError('maxlength')">
+    <!-- Hack for Google Chrome's annoying autocompletion :) -->
+    <input style="display:none">
+    <input type="password" style="display:none">
+    <!-- //Hack -->
+
+    <div class="field">
+        <div class="input">
+            <input [formControl]="username" [ngClass]="{'empty': username.value === ''}" type="text" maxlength="10"
+                   autofocus />
+            <label>
+                <i class="fas fa-user"></i>
+            </label>
+            <span class="placeholder">Username</span>
+            <span class="hint">{{username.value.length || 0}}/10</span>
+        </div>
+
+        <div *ngIf="username.getError('minlength') || username.getError('maxlength')">
             Username should be between <strong>4-10</strong> characters.
-        </mat-error>
-    </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <mat-label>Password</mat-label>
-        <input matInput #passwordInput type="password" [formControl]="password" [errorStateMatcher]="matcher"
-               maxlength="10" />
-        <mat-hint align="end">{{passwordInput.value?.length || 0}}/10</mat-hint>
-        <mat-error *ngIf="password.getError('minlength') || password.getError('maxlength')">
+    <div class="field">
+        <div class="input">
+            <input [formControl]="password" [ngClass]="{'empty': password.value === ''}" type="password"
+                   maxlength="10" />
+            <label>
+                <i class="fas fa-key"></i>
+            </label>
+            <span class="placeholder">Password</span>
+            <span class="hint">{{password.value.length || 0}}/10</span>
+        </div>
+
+        <div *ngIf="password.getError('minlength') || password.getError('maxlength')">
             Password should be between <strong>4-10</strong> characters.
-        </mat-error>
-    </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <mat-label>Repeat Password</mat-label>
-        <input matInput #repeatInput type="password" [formControl]="repeat" [errorStateMatcher]="matcher"
-               maxlength="10" />
-        <mat-hint align="end">{{repeatInput.value?.length || 0}}/10</mat-hint>
-        <mat-error *ngIf="password.getError('minlength') || password.getError('maxlength')">
+    <div class="field">
+        <div class="input">
+            <input [formControl]="repeat" [ngClass]="{'empty': repeat.value === ''}" type="password" maxlength="10" />
+            <label>
+                <i class="fas fa-key"></i>
+            </label>
+            <span class="placeholder">Repeat password</span>
+            <span class="hint">{{repeat.value.length || 0}}/10</span>
+        </div>
+
+        <div *ngIf="repeat.getError('minlength') || repeat.getError('maxlength')">
             Password should be between <strong>4-10</strong> characters.
-        </mat-error>
-    </mat-form-field>
+        </div>
+    </div>
 
-    <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput #emailInput type="email" [formControl]="email" [errorStateMatcher]="matcher"
-               placeholder="email@example.org">
-        <mat-hint align="end">{{emailInput.value?.length || 0}}/50</mat-hint>
-        <mat-error *ngIf="email.hasError('email')">
+    <div class="field">
+        <div class="input">
+            <input [formControl]="email" [ngClass]="{'empty': email.value === ''}" type="email" maxlength="50" />
+            <label>
+                <i class="fas fa-envelope"></i>
+            </label>
+            <span class="placeholder">email@example.org</span>
+            <span class="hint">{{email.value.length || 0}}/50</span>
+        </div>
+
+        <div *ngIf="email.hasError('email')">
             Please enter a valid email address
-        </mat-error>
-    </mat-form-field> -->
-
-    <button>Register</button>
+        </div>
+    </div>
+    <div class="actions">
+        <button>Register</button>
+        <a class="highlight">reset</a>
+    </div>
 </form>

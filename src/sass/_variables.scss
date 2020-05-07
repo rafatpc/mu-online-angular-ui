@@ -9,7 +9,7 @@ $black: #000000;
 $blue: #1896c6;
 $green: #95ad21;
 $yellow: #fed724;
-$error: #ff0000;
+$error: #f44336;
 $success: #dddd00;
 $navy: #5f634a;
 
@@ -144,16 +144,20 @@ $tabs-content-border: $black;
 $tabs-content-spacing: 10px;
 
 // Buttons
-$button-gradient: #ffe462, #ffd927;
-$button-hover-gradient: #ffa74a, #ff7801;
-$button-color: $black;
-$button-color-hover: $black;
-$button-border: $black;
-$button-gray-gradient: $gray-light, $gray-dark;
-$button-gray-hover-gradient: $gray-dark, lighten($gray-darkest, 5%);
+$button-background: $yellow;
+$button-border-color: $gray-darkest;
+$button-color: $gray;
+$button-hover-background: darken($button-background, 9%);
+$button-hover-color: darken($button-color, 10%);
+// $button-ripple-color: transparentize(#fff2b8, 0.4);
+$button-ripple-color: transparentize($gray, 0.4);
+
+$button-gray-background: $gray-dark;
+$button-gray-border: $gray-darkest;
 $button-gray-color: $yellow;
+$button-gray-hover-background: darken($gray-dark, 3%);
 $button-gray-hover-color: darken($yellow, 20%);
-$button-gray-border: $black;
+$button-grayripple-color: transparentize($yellow, 0.4);
 
 // Home - Info tab
 $home-info-background: darken($gray-dark, 5%);
