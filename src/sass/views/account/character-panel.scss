@@ -33,6 +33,7 @@ section.character-panel {
             .content {
                 background-color: $character-panel-tabs-background;
                 margin: 10px 0;
+                padding: 0;
                 border: 0;
 
                 ul > li i {
@@ -40,12 +41,27 @@ section.character-panel {
                 }
             }
 
-            .pills a {
-                border-radius: 6px;
-                margin: 0 5px;
-                font-size: 11px;
-                height: 30px;
-                line-height: 30px;
+            .actions {
+                display: flex;
+
+                a {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    text-transform: none;
+                    align-items: center;
+                    padding: 5px auto;
+                    margin: 0 5px;
+                    font-size: 11px;
+
+                    &:first-child {
+                        margin-left: 0;
+                    }
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
             }
         }
     }

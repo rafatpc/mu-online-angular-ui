@@ -24,8 +24,8 @@
         </div>
     </div>
     <div class="options">
-        <section id="character-panel-tabs" class="tabs">
-            <div class="pills">
+        <section class="tabs">
+            <div class="actions">
                 <ng-container *ngFor="let route of navigation">
                     <a [routerLink]="[{ outlets: { 'character-panel': [route.path] } }]"
                        [routerLinkActiveOptions]="{exact: true}" routerLinkActive="selected" class="button gray">

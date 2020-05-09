@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: $gray-lightest;
     background-image: url($background-image);
