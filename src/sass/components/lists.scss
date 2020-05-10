@@ -7,14 +7,20 @@ ul {
     li {
         line-height: $unordered-list-height;
         height: $unordered-list-height;
+        float: left;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             font-family: "Font Awesome 5 Free";
             font-weight: 900;
             line-height: $unordered-list-height;
             height: $unordered-list-height;
         }
+    }
+    
+    &:not(.inline) {
+        display: flex;
+        flex-direction: column;
     }
 
     &:not(.right):not(.no-bullet) li:before {
