@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { ConditionConfig, LackingRequirements } from './module.types';
+import { ConditionConfig, Requirement } from './module.types';
 
 @Pipe({ name: 'LackingRequirements' })
 export class LackingRequirementsPipe implements PipeTransform {
-    transform(conditions: ConditionConfig[]): LackingRequirements[] {
+    transform(conditions: ConditionConfig[]): Requirement[] {
         return conditions.reduce((requirements, condition) => {
             const { type, lacking } = condition;
 

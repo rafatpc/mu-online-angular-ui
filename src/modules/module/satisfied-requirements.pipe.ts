@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { ConditionConfig, SatisfiedRequirements } from './module.types';
+import { ConditionConfig, Requirement } from './module.types';
 
 @Pipe({ name: 'SatisfiedRequirements' })
 export class SatisfiedRequirementsPipe implements PipeTransform {
-    transform(conditions: ConditionConfig[]): SatisfiedRequirements[] {
+    transform(conditions: ConditionConfig[]): Requirement[] {
         return conditions.reduce((requirements, condition) => {
             const { type, satisfied } = condition;
 

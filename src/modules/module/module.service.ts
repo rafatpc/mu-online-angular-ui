@@ -10,10 +10,10 @@ export class ModuleService {
     constructor(private readonly http: HttpClient) { }
 
     getModuleConfig(module: string, name: string): Observable<ModuleConfig> {
-        return this.http.get<ModuleConfig>(`${environment.apiUrl}/character/${name}/${module}`);
+        return this.http.get<ModuleConfig>(`${environment.apiUrl}/account/character/${name}/${module}`);
     }
 
     executeModule(module: string, name: string): Observable<null> {
-        return this.http.post<null>(`${environment.apiUrl}/character/${name}/${module}`, {});
+        return this.http.post<null>(`${environment.apiUrl}/account/character/${name}/${module}`, {});
     }
 }

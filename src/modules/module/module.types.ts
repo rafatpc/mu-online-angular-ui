@@ -5,20 +5,15 @@ export type ModuleConfig = {
 
 export type ConditionConfig = {
     type: string;
-    satisfied: SatisfiedRequirements[];
-    lacking: LackingRequirements[];
+    satisfied: Requirement[];
+    lacking: Requirement[];
 };
 
-export type SatisfiedRequirements = {
-    condition?: string;
+export type Requirement = {
     type: string;
     operator: string;
-    value: any
-};
-
-export type LackingRequirements = {
-    condition?: string;
-    type: string;
-    actual: any;
     value: any;
+    actual?: any;
+    message?: string;
+    condition?: string;
 };
