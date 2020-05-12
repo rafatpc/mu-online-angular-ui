@@ -7,6 +7,15 @@ section.character-option {
 
         ul {
             max-width: 250px;
+            margin: 0;
+
+            & > li i {
+                margin: 0 3px;
+            }
+
+            &:first-of-type{
+                margin-top: 5px;
+            }
         }
     }
 

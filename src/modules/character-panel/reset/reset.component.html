@@ -1,24 +1,32 @@
-<section class="character-option reset">
+<section class="character-option reset" *ngVar="Module.conditions | LackingRequirements as Lacking">
     <div class="requirements">
         <strong class="highlight">Minimal Requirements</strong>
         <ul>
-            <li>
-                <!--h@ck-->Level <strong>400</strong>
-                <i class="fas fa-check highlight green"></i>
-            </li>
-            <li>
-                <!--h@ck-->Below <strong>999</strong> resets
-                <i class="fas fa-check highlight green"></i>
-            </li>
-            <li>
-                <!--h@ck--><strong>200,000,000</strong> Zen
+            <li *ngFor="let requirement of Lacking">
+                <ng-container *ngIf="requirement.condition === 'OfflineCondition'">
+                    Online
+                </ng-container>
+                <ng-container *ngIf="requirement.condition === 'CharacterCondition'">
+                    {{requirement.type}} {{requirement.value}}
+                </ng-container>
                 <i class="fas fa-times highlight red"></i>
             </li>
         </ul>
+        <ul>
+            <li *ngFor="let requirement of Module.conditions | SatisfiedRequirements">
+                <ng-container *ngIf="requirement.condition === 'OfflineCondition'">
+                    Offline
+                </ng-container>
+                <ng-container *ngIf="requirement.condition === 'CharacterCondition'">
+                    {{requirement.type}} {{requirement.value}}
+                </ng-container>
+                <i class="fas fa-check highlight green"></i>
+            </li>
+        </ul>
     </div>
-    <div class="action disabled">
+    <div class="action" *ngVar="Lacking.length > 0 as isDisabled" [ngClass]="{disabled: isDisabled}">
         <div class="text-center">
-            <a href="#" id="reset-action" class="highlight">
+            <a href="#" class="highlight" (click)="!isDisabled && action()">
                 <i class="fas fa-sync-alt"></i>
                 Reset
             </a>

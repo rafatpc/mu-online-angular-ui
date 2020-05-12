@@ -27,6 +27,11 @@ import { ItemTypeClassPipe } from '../items/item-type-class.pipe';
 import { ItemImagePipe } from '../items/item-image.pipe';
 import { ItemNamePipe } from '../items/item-name.pipe';
 import { ItemSocketBonusPipe } from '../items/item-socket-bonus.pipe';
+// Module-related
+import { LackingRequirementsPipe } from '../module/lacking-requirements.pipe';
+import { SatisfiedRequirementsPipe } from '../module/satisfied-requirements.pipe';
+// Directives
+import { VarDirective } from './ng-var.directive';
 
 const Modules = [
     CheckboxComponent,
@@ -35,6 +40,8 @@ const Modules = [
     StatusComponent,
     LoadingComponent,
     ItemInfoComponent,
+    // Directives
+    VarDirective,
     // Pipes
     PadZerosPipe,
     PkStatusPipe,
@@ -52,7 +59,9 @@ const Modules = [
     ItemExcellentOptionPipe,
     ItemSocketOptionPipe,
     ItemSocketBonusPipe,
-    ItemTypeClassPipe
+    ItemTypeClassPipe,
+    LackingRequirementsPipe,
+    SatisfiedRequirementsPipe
 ];
 
 @NgModule({

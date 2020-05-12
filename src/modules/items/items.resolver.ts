@@ -3,7 +3,6 @@ import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { ItemsService } from './items.service';
-import { ItemConfigMap } from './items.types';
 
 @Injectable({
     providedIn: 'root'

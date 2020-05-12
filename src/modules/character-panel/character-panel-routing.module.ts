@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+import { ModuleResolver } from '../module/module.resolver';
+import { ParentCharacterResolver } from '../character/parent-character.resolver';
+
 import { OverviewComponent } from './overview/overview.component';
 import { ResetComponent } from './reset/reset.component';
 import { GrandResetComponent } from './grand-reset/grand-reset.component';
@@ -10,7 +13,15 @@ import { ClearInventoryComponent } from './clear-inventory/clear-inventory.compo
 
 export const CharacterPanelRoutes: Routes = [
     { path: '', component: OverviewComponent, outlet: 'character-panel' },
-    { path: 'reset', component: ResetComponent, outlet: 'character-panel' },
+    {
+        path: 'reset',
+        component: ResetComponent,
+        resolve: {
+            module: ModuleResolver,
+            character: ParentCharacterResolver
+        },
+        outlet: 'character-panel'
+    },
     { path: 'grand-reset', component: GrandResetComponent, outlet: 'character-panel' },
     { path: 'add-stats', component: AddStatsComponent, outlet: 'character-panel' },
     { path: 'swap-stats', component: SwapStatsComponent, outlet: 'character-panel' },
